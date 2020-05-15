@@ -1,0 +1,35 @@
+.root {
+	display: flex;
+	background-color: blue;
+	width: 150px;
+	height: 150px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.text {
+	color: white;
+	font-weight: bold;
+}
+
+.dialog {
+	display: flex;
+	border: 2px solid white;
+	background-color: blue;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 500px;
+}
+
+.underlay {
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

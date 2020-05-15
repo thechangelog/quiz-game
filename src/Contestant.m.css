@@ -1,0 +1,18 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	width: 100px;
+	align-items: center;
+}
+
+.avatar {
+	border-radius: 50%;
+	height: auto;
+	width: 100%;
+}
+
+.name {
+}
+
+.score {
+}
