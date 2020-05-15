@@ -1,9 +1,8 @@
 import { create, tsx } from '@dojo/framework/core/vdom';
-import * as css from './Contestant.m.css';
+import * as css from './styles/Contestant.m.css';
+import { Contestant as ContestantData } from '../interfaces';
 
-export interface ContestantProperties {
-	name: string;
-	handle: string;
+export interface ContestantProperties extends ContestantData {
 	score: number;
 	editable?: boolean;
 	onChange?: (value: number) => void;
@@ -16,7 +15,10 @@ export const Contestant = factory(function Contestant({ properties }) {
 	return (
 		<div classes={css.root}>
 			<div classes={css.name}>{name}</div>
-			<img classes={css.avatar} src={`https://github.com/${handle}.png`} />
+			<img
+				classes={css.avatar}
+				src={`https://avatar-redirect.appspot.com/twitter/${handle}`}
+			/>
 			{editable ? (
 				<input type="number" value={'' + score} onchange={() => onChange(score)} />
 			) : (

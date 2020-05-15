@@ -1,5 +1,5 @@
 import { create, tsx } from '@dojo/framework/core/vdom';
-import * as css from './Answer.m.css';
+import * as css from './styles/Answer.m.css';
 import icache from '@dojo/framework/core/middleware/icache';
 
 export interface AnswerProperties {
