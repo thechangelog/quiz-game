@@ -16,6 +16,7 @@
 
 .dialog {
 	display: flex;
+	flex-direction: column;
 	border: 2px solid white;
 	background-color: blue;
 	justify-content: center;
