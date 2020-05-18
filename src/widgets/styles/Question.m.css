@@ -34,3 +34,7 @@
 	right: 0;
 	bottom: 0;
 }
+
+.used {
+	color: gray;
+}

@@ -12,10 +12,11 @@ const factory = create({ icache }).properties<AnswerProperties>();
 export const Answer = factory(function Answer({ middleware: { icache }, properties }) {
 	const open = icache.getOrSet('open', false);
 	const { value, clue } = properties();
+	const used = icache.getOrSet('used', false);
 	return (
 		<virtual>
-			<div classes={css.root} onclick={() => icache.set('open', true)}>
-				<div classes={css.text}>{'' + value}</div>
+			<div classes={css.root} onclick={() => icache.set('open', !used)}>
+				<div classes={[css.text, used ? css.used : null]}>{'' + value}</div>
 			</div>
 			{open && (
 				<body>
@@ -24,6 +25,7 @@ export const Answer = factory(function Answer({ middleware: { icache }, properti
 						onclick={(event) => {
 							event.stopPropagation();
 							icache.set('open', false);
+							icache.set('used', true);
 						}}
 					>
 						<div
