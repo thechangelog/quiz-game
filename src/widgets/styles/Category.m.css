@@ -1,0 +1,12 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.categoryTitle {
+	text-align: center;
+	font-weight: bold;
+}
+
+.box {}
+

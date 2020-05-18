@@ -5,7 +5,7 @@ import dojo from '@dojo/themes/dojo';
 import { Game } from './interfaces';
 
 import Contestant from './widgets/Contestant';
-import Answer from './widgets/Answer';
+import Category from './widgets/Category';
 
 import * as css from './App.m.css';
 
@@ -26,26 +26,39 @@ export default factory(function App({ middleware: { theme, icache } }) {
 		return (await response.json()).game as Game;
 	});
 
+	if (!game) {
+		return <div key="loading">Loading</div>;
+	}
+
+	const currentRound = icache.getOrSet('currentRound', 0);
+	const numRounds = game.rounds.length;
+
 	return (
-		game && (
-			<div classes={[css.root]}>
-				<Answer
-					points={300}
-					text="This framework is definitely probably better than React."
-				/>
-				<div
-					styles={{
-						width: '400px',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
+		<div classes={[css.root]}>
+			<div>
+				<h1>!JS Danger</h1>
+				<h2>Round {`${currentRound + 1}`}</h2>
+				<button
+					disabled={currentRound >= numRounds - 1}
+					onclick={() => {
+						if (currentRound < numRounds - 1) {
+							icache.set('currentRound', currentRound + 1);
+						}
 					}}
 				>
-					{game.contestants.map((c) => (
-						<Contestant name={c.name} handle={c.handle} score={c.score || 0} />
-					))}
-				</div>
+					Next round
+				</button>
 			</div>
-		)
+			<div classes={css.grid}>
+				{game.rounds[currentRound].categories.map((c) => (
+					<Category key={c.name} {...c} />
+				))}
+			</div>
+			<div classes={css.contestants}>
+				{game.contestants.map((c) => (
+					<Contestant key={c.name} name={c.name} handle={c.handle} score={c.score || 0} />
+				))}
+			</div>
+		</div>
 	);
 });

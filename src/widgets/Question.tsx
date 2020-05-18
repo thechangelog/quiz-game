@@ -1,12 +1,9 @@
 import { create, tsx } from '@dojo/framework/core/vdom';
-import * as css from './styles/Answer.m.css';
+import { Question as QuestionData } from '../interfaces';
+import * as css from './styles/Question.m.css';
 import icache from '@dojo/framework/core/middleware/icache';
 
-export interface AnswerProperties {
-	text: string;
-	points: 100 | 200 | 300 | 400 | 500;
-	hint?: string;
-	note?: string;
+export interface AnswerProperties extends QuestionData {
 	used?: boolean;
 }
 
@@ -14,11 +11,11 @@ const factory = create({ icache }).properties<AnswerProperties>();
 
 export const Answer = factory(function Answer({ middleware: { icache }, properties }) {
 	const open = icache.getOrSet('open', false);
-	const { points, text } = properties();
+	const { value, clue } = properties();
 	return (
 		<virtual>
 			<div classes={css.root} onclick={() => icache.set('open', true)}>
-				<div classes={css.text}>{'' + points}</div>
+				<div classes={css.text}>{'' + value}</div>
 			</div>
 			{open && (
 				<body>
@@ -35,7 +32,7 @@ export const Answer = factory(function Answer({ middleware: { icache }, properti
 								event.stopPropagation();
 							}}
 						>
-							<div classes={css.text}>{text}</div>
+							<div classes={css.text}>{clue}</div>
 						</div>
 					</div>
 				</body>
