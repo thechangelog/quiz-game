@@ -36,7 +36,7 @@ export default factory(function App({ middleware: { theme, icache } }) {
 	return (
 		<div classes={[css.root]}>
 			<div>
-				<h1>!JS Danger</h1>
+				<h1>{game.name}</h1>
 				<h2>Round {`${currentRound + 1}`}</h2>
 				<button
 					disabled={currentRound >= numRounds - 1}
