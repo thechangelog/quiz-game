@@ -1,10 +1,13 @@
 import renderer, { tsx } from '@dojo/framework/core/vdom';
-import Registry from '@dojo/framework/core/Registry';
+import { registerStoreInjector } from '@dojo/framework/stores/StoreInjector';
+import Store from '@dojo/framework/stores/store';
+import { State } from './interfaces';
 import '@dojo/themes/dojo/index.css';
 
 import App from './App';
 
-const registry = new Registry();
+const store = new Store<State>();
+const registry = registerStoreInjector(store);
 
 const r = renderer(() => <App />);
 r.mount({ registry });

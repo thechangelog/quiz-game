@@ -1,42 +1,39 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
 import theme from '@dojo/framework/core/middleware/theme';
 import icache from '@dojo/framework/core/middleware/icache';
+import store from './middleware/store';
 import dojo from '@dojo/themes/dojo';
-import { Game } from './interfaces';
+import { loadGame } from './processes/game';
 
 import Contestant from './widgets/Contestant';
 import Category from './widgets/Category';
 
 import * as css from './App.m.css';
 
-const factory = create({ theme, icache });
+const factory = create({ theme, icache, store });
 
-export default factory(function App({ middleware: { theme, icache } }) {
+export default factory(function App({ middleware: { theme, icache, store } }) {
 	if (!theme.get()) {
 		theme.set(dojo);
 	}
 
-	const game = icache.getOrSet('game', async () => {
-		const response = await fetch('./assets/game.json');
+	const { get, path, executor } = store;
 
-		if (response.status !== 200) {
-			throw new Error('Failed to fetch game data.');
-		}
-
-		return (await response.json()).game as Game;
-	});
-
-	if (!game) {
+	const gameName = get(path('name'));
+	if (!gameName) {
+		executor(loadGame)({ url: './assets/game.json' });
 		return <div key="loading">Loading</div>;
 	}
 
-	const currentRound = icache.getOrSet('currentRound', 0);
-	const numRounds = game.rounds.length;
+	const rounds = get(path('rounds'));
+	const numRounds = rounds.length;
+	const currentRound = get(path('currentRound'));
+	const contestants = get(path('contestants'));
 
 	return (
 		<div classes={[css.root]}>
 			<div>
-				<h1>{game.name}</h1>
+				<h1>{gameName}</h1>
 				<h2>Round {`${currentRound + 1}`}</h2>
 				<button
 					disabled={currentRound >= numRounds - 1}
@@ -49,15 +46,22 @@ export default factory(function App({ middleware: { theme, icache } }) {
 					Next round
 				</button>
 			</div>
-			<div classes={css.grid}>
-				{game.rounds[currentRound].categories.map((c) => (
-					<Category key={c.name} {...c} />
-				))}
-			</div>
-			<div classes={css.contestants}>
-				{game.contestants.map((c) => (
-					<Contestant key={c.name} name={c.name} handle={c.handle} score={c.score || 0} />
-				))}
+			<div classes={css.gameWrapper}>
+				<div classes={css.grid}>
+					{rounds[currentRound].categories.map((c) => (
+						<Category key={c.name} {...c} />
+					))}
+				</div>
+				<div classes={css.contestants}>
+					{Object.values(contestants).map((c) => (
+						<Contestant
+							key={c.name}
+							name={c.name}
+							handle={c.handle}
+							score={c.score || 0}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);

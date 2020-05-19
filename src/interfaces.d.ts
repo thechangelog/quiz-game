@@ -1,7 +1,7 @@
 export interface Contestant {
 	name: string;
-	handle?: string;
-	score?: number;
+	handle: string;
+	score: number;
 }
 
 export interface Question {
@@ -27,4 +27,19 @@ export interface Game {
 	name: string;
 	contestants: Contestant[];
 	rounds: Round[];
+}
+
+export interface State {
+	name: string;
+	currentRound: number;
+	contestants: {
+		[name: string]: Contestant;
+	};
+	pointsAtStake: number;
+	rounds: Round[];
+	questionsMetadata: {
+		[roundCategoryValue: string]: {
+			used: boolean;
+		};
+	};
 }

@@ -24,7 +24,8 @@
     "tabWidth": 4,
     "useTabs": true,
     "printWidth": 100,
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "trailingComma": "none"
   },
   "devDependencies": {
     "@dojo/cli": "^6.0.0",
