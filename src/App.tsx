@@ -1,7 +1,7 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
 import icache from '@dojo/framework/core/middleware/icache';
 import store from './middleware/store';
-import { loadGame, setCurrentQuestion } from './processes/game';
+import { loadGame, setCurrentQuestion, setCurrentRound } from './processes/game';
 
 import Contestant from './widgets/Contestant';
 import Category from './widgets/Category';
@@ -29,14 +29,16 @@ export default factory(function App({ middleware: { icache, store } }) {
 
 	return (
 		<div classes={[css.root]}>
-			<div>
+			<div classes={css.header}>
 				<h1>{gameName}</h1>
-				<h2>Round {`${currentRound + 1}`}</h2>
+				<h2>
+					Round {String(currentRound + 1)}: {round.name}
+				</h2>
 				<button
 					disabled={currentRound >= numRounds - 1}
 					onclick={() => {
 						if (currentRound < numRounds - 1) {
-							icache.set('currentRound', currentRound + 1);
+							executor(setCurrentRound)({ round: currentRound + 1 });
 						}
 					}}
 				>

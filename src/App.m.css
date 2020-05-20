@@ -7,6 +7,10 @@
 	justify-content: space-around;
 }
 
+.header {
+	color: var(--white);
+}
+
 .gameWrapper {
 	display: flex;
 	align-items: center;

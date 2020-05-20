@@ -22,6 +22,11 @@ const loadGameData = createCommand<{ url: string }>(async ({ path, payload: { ur
 	];
 });
 
+const setCurrentRoundCommand = createCommand<{ round: number }>(({ path, payload: { round } }) => {
+	return [replace(path('currentRound'), round)];
+});
+
+// scoring
 const addScore = (contestants: Contestant[], handle: string, score: number) =>
 	contestants.map((contestant) =>
 		contestant.handle === handle
@@ -34,7 +39,6 @@ const incrementScoreCommand = createCommand<{ handle: string; value?: number }>(
 		return [replace(path('contestants'), addScore(contestants, handle, value))];
 	}
 );
-
 const decrementScoreCommand = createCommand<{ handle: string; value?: number }>(
 	({ get, path, payload: { handle, value = defaultValue } }) => {
 		const contestants = get(path('contestants'));
@@ -61,6 +65,7 @@ const setCurrentQuestionCommand = createCommand<{ question?: Question | undefine
 );
 
 export const loadGame = createProcess('loadGame', [loadGameData]);
+export const setCurrentRound = createProcess('setCurrentRound', [setCurrentRoundCommand]);
 export const incrementScore = createProcess('incrementScore', [incrementScoreCommand]);
 export const decrementScore = createProcess('decrementScore', [decrementScoreCommand]);
 export const setPointsAtStake = createProcess('pointsAtStake', [setPointsAtStakeCommand]);
