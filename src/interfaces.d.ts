@@ -40,9 +40,4 @@ export interface State {
 		question: Question | undefined;
 	};
 	rounds: Round[];
-	questionsMetadata: {
-		[roundCategoryValue: string]: {
-			used: boolean;
-		};
-	};
 }
