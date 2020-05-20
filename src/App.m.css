@@ -23,6 +23,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	flex-grow: 1;
 }
 
 .clue {
@@ -37,6 +38,8 @@
 	color: var(--white);
 	align-self: stretch;
 	text-align: center;
+	flex-grow: 2;
+	flex-basis: 600px;
 }
 
 .showAnswer {

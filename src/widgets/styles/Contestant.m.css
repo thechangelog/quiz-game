@@ -1,21 +1,44 @@
+@import '../../variables.css';
+
 .root {
 	display: flex;
-	flex-direction: column;
 	width: 100px;
 	align-items: center;
+	color: var(--white);
+	margin: 24px;
+}
+
+.root:hover .actions {
+	visibility: visible;
 }
 
 .avatar {
 	border-radius: 50%;
-	height: auto;
-	width: 100%;
+	height: 100px;
+	width: auto;
+	object-fit: cover;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
 }
 
 .name {
 }
 
 .score {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.negative {
+	color: var(--red);
+}
+
+.positive {
 }
 
 .actions {
+	visibility: hidden;
 }

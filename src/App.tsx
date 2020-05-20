@@ -45,7 +45,7 @@ export default factory(function App({ middleware: { icache, store } }) {
 			</div>
 			<div classes={css.gameWrapper}>
 				{currentQuestion ? (
-					<div classes={css.currentQuestion}>
+					<div key="currentQuestion" classes={css.currentQuestion}>
 						<div
 							onclick={() => {
 								executor(setCurrentQuestion)({ question: undefined });
@@ -69,7 +69,7 @@ export default factory(function App({ middleware: { icache, store } }) {
 						)}
 					</div>
 				) : (
-					<div classes={css.grid}>
+					<div key="grid" classes={css.grid}>
 						{round.categories.map(({ name, questions }) => (
 							<Category key={name} name={name} questions={questions} />
 						))}
