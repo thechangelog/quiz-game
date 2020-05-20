@@ -1,32 +1,37 @@
 @import '../../variables.css';
 
 .root {
-	display: flex;
+	display: grid;
 	flex-direction: column;
 }
 
 .title {
+	font-family: "Pragati Narrow:", sans-serif;
 	text-align: center;
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: calc(0.5em + 1vw);
 	color: var(--white);
 }
 
 .box {
 	display: flex;
-	width: 150px;
 	height: 100px;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--blue);
 	margin: 2px;
+	font-family: "Pragati Narrow:", sans-serif;
+	letter-spacing: 0.1em;
+	text-shadow: 0 0 10px black;
+	padding: 10px 20px;
 }
 
 .value {
 	color: var(--yellow);
 	cursor: pointer;
 	font-weight: bold;
-	font-size: 2em;
+	font-size: calc(2em + 1vw);
+	margin-top: 0.125em;
 }
 
 .used {

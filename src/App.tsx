@@ -33,9 +33,6 @@ export default factory(function App({ middleware: { icache, store } }) {
 		<div classes={[css.root]}>
 			<div classes={css.header}>
 				<h1>{gameName}</h1>
-				<h2>
-					Round {String(currentRound + 1)}: {round.name}
-				</h2>
 				<button
 					disabled={currentRound >= numRounds - 1}
 					onclick={() => {
@@ -44,7 +41,7 @@ export default factory(function App({ middleware: { icache, store } }) {
 						}
 					}}
 				>
-					Next round
+					Round {String(currentRound + 1)}: {round.name}
 				</button>
 			</div>
 			<div classes={css.gameWrapper}>

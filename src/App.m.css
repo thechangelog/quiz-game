@@ -1,25 +1,59 @@
 @import './variables.css';
 
+@font-face {
+	font-family: 'jsdanger';
+	src: url('/assets/webfont.woff2') format('woff2'),
+			 url('/assets/webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .root {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
+	padding: 5vw;
 }
 
 .header {
+	align-items: flex-end;
+	justify-content: space-between;
+	display: flex;
 	color: var(--white);
+	width: 100%;
+	margin-bottom: 2.5vw;
+}
+
+.header h1 {
+	background: url('/assets/logo_3x.png') center no-repeat;
+	background-size: 100%;
+	flex: 0 0 526px;
+	width: 526px;
+	height: 100px;
+	margin: 0 20px 0 0;
+	text-indent: -9999px;
+}
+
+.header button {
+	font-family: 'jsdanger', serif;
+	background: none;
+	border: none;
+	color: var(--yellow);
+	font-size: calc(1em + 1vw);
 }
 
 .gameWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
 
 }
 
 .grid {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .contestants {
@@ -27,12 +61,13 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	flex-grow: 1;
 }
 
 .clue {
 	cursor: pointer;
+	font-family: 'jsdanger', serif;
 	font-size: 3em;
+	padding: 1vw;
 }
 
 .currentQuestion {
