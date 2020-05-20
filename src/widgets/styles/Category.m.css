@@ -1,12 +1,30 @@
+@import '../../variables.css';
+
 .root {
 	display: flex;
 	flex-direction: column;
 }
 
-.categoryTitle {
+.title {
 	text-align: center;
 	font-weight: bold;
+	font-size: 1.2em;
+	color: var(--white);
 }
 
-.box {}
+.box {
+	display: flex;
+	width: 150px;
+	height: 100px;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--blue);
+	margin: 2px;
+}
 
+.value {
+	color: var(--yellow);
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 2em;
+}

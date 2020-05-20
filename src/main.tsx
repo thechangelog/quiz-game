@@ -1,6 +1,6 @@
 import renderer, { tsx } from '@dojo/framework/core/vdom';
 import { registerStoreInjector } from '@dojo/framework/stores/StoreInjector';
-import Store from '@dojo/framework/stores/store';
+import Store from '@dojo/framework/stores/Store';
 import { State } from './interfaces';
 import '@dojo/themes/dojo/index.css';
 

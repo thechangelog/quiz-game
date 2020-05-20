@@ -1,5 +1,5 @@
 import { createCommandFactory, createProcess } from '@dojo/framework/stores/process';
-import { State, Game } from '../interfaces';
+import { State, Game, Question, Contestant } from '../interfaces';
 import { add, replace } from '@dojo/framework/stores/state/operations';
 
 const defaultValue = 100;
@@ -14,17 +14,7 @@ const loadGameData = createCommand<{ url: string }>(async ({ path, payload: { ur
 	const { contestants, rounds, name } = (await response.json()).game as Game;
 
 	return [
-		add(
-			path('contestants'),
-			contestants.reduce((acc, contestant) => {
-				acc[contestant.handle] = {
-					name: contestant.name,
-					handle: contestant.handle,
-					score: contestant.score
-				};
-				return acc;
-			}, {} as { [name: string]: { name: string; handle: string; score: number } })
-		),
+		add(path('contestants'), contestants),
 		add(path('rounds'), rounds),
 		add(path('name'), name),
 		add(path('currentRound'), 0),
@@ -32,17 +22,23 @@ const loadGameData = createCommand<{ url: string }>(async ({ path, payload: { ur
 	];
 });
 
+const addScore = (contestants: Contestant[], handle: string, score: number) =>
+	contestants.map((contestant) =>
+		contestant.handle === handle
+			? { ...contestant, score: contestant.score + score }
+			: contestant
+	);
 const incrementScoreCommand = createCommand<{ handle: string; value?: number }>(
 	({ get, path, payload: { handle, value = defaultValue } }) => {
-		const currentScore = get(path('contestants', handle, 'score'));
-		return [replace(path('contestants', handle, 'score'), currentScore + value)];
+		const contestants = get(path('contestants'));
+		return [replace(path('contestants'), addScore(contestants, handle, value))];
 	}
 );
 
 const decrementScoreCommand = createCommand<{ handle: string; value?: number }>(
 	({ get, path, payload: { handle, value = defaultValue } }) => {
-		const currentScore = get(path('contestants', handle, 'score'));
-		return [replace(path('contestants', handle, 'score'), currentScore - value)];
+		const contestants = get(path('contestants'));
+		return [replace(path('contestants'), addScore(contestants, handle, -value))];
 	}
 );
 
@@ -58,8 +54,15 @@ const markQuestionUsedCommand = createCommand<{ round: string; category: string;
 	}
 );
 
+const setCurrentQuestionCommand = createCommand<{ question?: Question | undefined }>(
+	({ path, payload: { question } }) => {
+		return [replace(path('currentQuestion'), question)];
+	}
+);
+
 export const loadGame = createProcess('loadGame', [loadGameData]);
 export const incrementScore = createProcess('incrementScore', [incrementScoreCommand]);
 export const decrementScore = createProcess('decrementScore', [decrementScoreCommand]);
 export const setPointsAtStake = createProcess('pointsAtStake', [setPointsAtStakeCommand]);
 export const markQuestionUsed = createProcess('markQuestionUsed', [markQuestionUsedCommand]);
+export const setCurrentQuestion = createProcess('setCurrentQuestion', [setCurrentQuestionCommand]);

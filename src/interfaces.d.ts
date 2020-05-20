@@ -32,10 +32,9 @@ export interface Game {
 export interface State {
 	name: string;
 	currentRound: number;
-	contestants: {
-		[name: string]: Contestant;
-	};
+	contestants: Contestant[];
 	pointsAtStake: number;
+	currentQuestion?: Question;
 	rounds: Round[];
 	questionsMetadata: {
 		[roundCategoryValue: string]: {

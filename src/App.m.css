@@ -1,3 +1,5 @@
+@import './variables.css';
+
 .root {
 	display: flex;
 	flex-direction: column;
@@ -21,4 +23,34 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.clue {
+	cursor: pointer;
+	font-size: 3em;
+}
+
+.currentQuestion {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--blue);
+	color: var(--white);
+	align-self: stretch;
+	text-align: center;
+}
+
+.showAnswer {
+	padding-top: 1em;
+	flex-grow: 0;
+	font-size: 2em;
+	text-align: center;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.answer {
+	padding-top: 1em;
+	flex-grow: 0;
+	font-size: 2em;
+	text-align: center;
 }

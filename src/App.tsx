@@ -1,22 +1,16 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
-import theme from '@dojo/framework/core/middleware/theme';
 import icache from '@dojo/framework/core/middleware/icache';
 import store from './middleware/store';
-import dojo from '@dojo/themes/dojo';
-import { loadGame } from './processes/game';
+import { loadGame, setCurrentQuestion } from './processes/game';
 
 import Contestant from './widgets/Contestant';
 import Category from './widgets/Category';
 
 import * as css from './App.m.css';
 
-const factory = create({ theme, icache, store });
+const factory = create({ icache, store });
 
-export default factory(function App({ middleware: { theme, icache, store } }) {
-	if (!theme.get()) {
-		theme.set(dojo);
-	}
-
+export default factory(function App({ middleware: { icache, store } }) {
 	const { get, path, executor } = store;
 
 	const gameName = get(path('name'));
@@ -28,7 +22,10 @@ export default factory(function App({ middleware: { theme, icache, store } }) {
 	const rounds = get(path('rounds'));
 	const numRounds = rounds.length;
 	const currentRound = get(path('currentRound'));
+	const round = rounds[currentRound];
 	const contestants = get(path('contestants'));
+	const currentQuestion = get(path('currentQuestion'));
+	const showAnswer = icache.getOrSet('showAnswer', false);
 
 	return (
 		<div classes={[css.root]}>
@@ -47,13 +44,39 @@ export default factory(function App({ middleware: { theme, icache, store } }) {
 				</button>
 			</div>
 			<div classes={css.gameWrapper}>
-				<div classes={css.grid}>
-					{rounds[currentRound].categories.map((c) => (
-						<Category key={c.name} {...c} />
-					))}
-				</div>
+				{currentQuestion ? (
+					<div classes={css.currentQuestion}>
+						<div
+							onclick={() => {
+								executor(setCurrentQuestion)({ question: undefined });
+								icache.set('showAnswer', false);
+							}}
+							classes={css.clue}
+						>
+							{currentQuestion.clue}
+						</div>
+						{showAnswer ? (
+							<div classes={css.answer}>{currentQuestion.answer}</div>
+						) : (
+							<div
+								onclick={() => {
+									icache.set('showAnswer', true);
+								}}
+								classes={css.showAnswer}
+							>
+								Show answer
+							</div>
+						)}
+					</div>
+				) : (
+					<div classes={css.grid}>
+						{round.categories.map(({ name, questions }) => (
+							<Category key={name} name={name} questions={questions} />
+						))}
+					</div>
+				)}
 				<div classes={css.contestants}>
-					{Object.values(contestants).map((c) => (
+					{contestants.map((c) => (
 						<Contestant
 							key={c.name}
 							name={c.name}
