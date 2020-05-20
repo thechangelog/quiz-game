@@ -13,10 +13,15 @@
 }
 
 .avatar {
+	border: 3px solid transparent;
 	border-radius: 50%;
 	height: 100px;
 	width: auto;
 	object-fit: cover;
+}
+
+.root:hover .avatar {
+	border-color: var(--yellow);
 }
 
 .info {
