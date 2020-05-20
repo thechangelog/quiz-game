@@ -9,6 +9,7 @@ export interface Question {
 	clue: string;
 	answer: string;
 	extra?: string;
+	used?: boolean;
 }
 
 export interface Category {
@@ -34,7 +35,10 @@ export interface State {
 	currentRound: number;
 	contestants: Contestant[];
 	pointsAtStake: number;
-	currentQuestion?: Question;
+	currentQuestion?: {
+		category: string | undefined;
+		question: Question | undefined;
+	};
 	rounds: Round[];
 	questionsMetadata: {
 		[roundCategoryValue: string]: {

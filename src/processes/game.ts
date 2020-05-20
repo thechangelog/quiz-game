@@ -52,17 +52,32 @@ const setPointsAtStakeCommand = createCommand<{ value?: number }>(
 	}
 );
 
-const markQuestionUsedCommand = createCommand<{ round: string; category: string; value: number }>(
-	({ path, payload: { round, category, value } }) => {
-		return [replace(path('questionsMetadata', `${round}-${category}-${value}`, 'used'), true)];
-	}
-);
+const markQuestionUsedCommand = createCommand<{
+	question: Question;
+	category?: string | undefined;
+}>(({ get, at, path, payload: { question, category: categoryName } }) => {
+	const currentRound = get(path('currentRound'));
+	const { categories } = get(at(path('rounds'), currentRound));
+	const currentCategory = categories.findIndex((category) => category.name === categoryName);
+	return [
+		replace(
+			path(
+				at(path(at(path('rounds'), currentRound), 'categories'), currentCategory),
+				'questions'
+			),
+			categories[currentCategory].questions.map((q) =>
+				q === question ? { ...question, used: true } : q
+			)
+		)
+	];
+});
 
-const setCurrentQuestionCommand = createCommand<{ question?: Question | undefined }>(
-	({ path, payload: { question } }) => {
-		return [replace(path('currentQuestion'), question)];
-	}
-);
+const setCurrentQuestionCommand = createCommand<{
+	question?: Question | undefined;
+	category?: string | undefined;
+}>(({ path, payload: { question, category } }) => {
+	return [replace(path('currentQuestion'), { question, category })];
+});
 
 export const loadGame = createProcess('loadGame', [loadGameData]);
 export const setCurrentRound = createProcess('setCurrentRound', [setCurrentRoundCommand]);

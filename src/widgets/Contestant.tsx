@@ -19,7 +19,10 @@ export const Contestant = factory(function Contestant({ properties, middleware: 
 					onclick={() => {
 						store.executor(incrementScore)({
 							handle,
-							value: currentQuestion ? currentQuestion.value : 100
+							value:
+								currentQuestion && currentQuestion.question
+									? currentQuestion.question.value
+									: 100
 						});
 					}}
 				>
@@ -29,7 +32,10 @@ export const Contestant = factory(function Contestant({ properties, middleware: 
 					onclick={() => {
 						store.executor(decrementScore)({
 							handle,
-							value: currentQuestion ? currentQuestion.value : 100
+							value:
+								currentQuestion && currentQuestion.question
+									? currentQuestion.question.value
+									: 100
 						});
 					}}
 				>

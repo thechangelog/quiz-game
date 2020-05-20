@@ -15,13 +15,17 @@ export const Category = factory(function Category({ middleware: { store }, prope
 		<div classes={css.root}>
 			<div classes={[css.box, css.title]}>{name}</div>
 			{questions.map((question) => (
-				<div
-					onclick={() => {
-						executor(setCurrentQuestion)({ question });
-					}}
-					classes={[css.box, css.value]}
-				>
-					{String(question.value)}
+				<div classes={css.box}>
+					{!question.used && (
+						<div
+							onclick={() => {
+								executor(setCurrentQuestion)({ question, category: name });
+							}}
+							classes={css.value}
+						>
+							{String(question.value)}
+						</div>
+					)}
 				</div>
 			))}
 		</div>

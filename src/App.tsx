@@ -1,7 +1,7 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
 import icache from '@dojo/framework/core/middleware/icache';
 import store from './middleware/store';
-import { loadGame, setCurrentQuestion, setCurrentRound } from './processes/game';
+import { loadGame, setCurrentQuestion, setCurrentRound, markQuestionUsed } from './processes/game';
 
 import Contestant from './widgets/Contestant';
 import Category from './widgets/Category';
@@ -24,7 +24,9 @@ export default factory(function App({ middleware: { icache, store } }) {
 	const currentRound = get(path('currentRound'));
 	const round = rounds[currentRound];
 	const contestants = get(path('contestants'));
-	const currentQuestion = get(path('currentQuestion'));
+	const { question: currentQuestion, category: currentCategory } = get(
+		path('currentQuestion')
+	) || { question: undefined, category: undefined };
 	const showAnswer = icache.getOrSet('showAnswer', false);
 
 	return (
@@ -50,7 +52,10 @@ export default factory(function App({ middleware: { icache, store } }) {
 					<div key="currentQuestion" classes={css.currentQuestion}>
 						<div
 							onclick={() => {
-								executor(setCurrentQuestion)({ question: undefined });
+								executor(setCurrentQuestion)({
+									question: undefined,
+									category: undefined
+								});
 								icache.set('showAnswer', false);
 							}}
 							classes={css.clue}
@@ -63,6 +68,10 @@ export default factory(function App({ middleware: { icache, store } }) {
 							<div
 								onclick={() => {
 									icache.set('showAnswer', true);
+									executor(markQuestionUsed)({
+										question: currentQuestion,
+										category: currentCategory
+									});
 								}}
 								classes={css.showAnswer}
 							>
