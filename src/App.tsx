@@ -77,7 +77,7 @@ export default factory(function App({ middleware: { icache, store } }) {
 									}}
 									classes={css.showAnswer}
 								>
-									Show answer
+									Show Answer
 								</div>
 							)}
 						</div>

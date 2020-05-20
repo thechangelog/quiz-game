@@ -31,9 +31,13 @@
 }
 
 .name {
+	font-family: 'jsdanger', serif;
+	font-size: calc(1em + 0.25vw);
+	margin-bottom: 0.25em;
 }
 
 .score {
+	font-family: "Pragati Narrow:", sans-serif;
 	font-weight: bold;
 	font-size: 2em;
 }
@@ -46,5 +50,14 @@
 }
 
 .actions {
+	display: flex;
+	flex-direction: column;
 	visibility: hidden;
+}
+
+.actions button {
+	background: none;
+	border: 0;
+	color: white;
+	font-size: calc(2em + 0.25vw);
 }

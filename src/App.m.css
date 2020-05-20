@@ -87,20 +87,23 @@
 	flex-grow: 2;
 	flex-basis: 600px;
 	padding: 2.5vw;
+	text-shadow: 0 0 10px black;
+}
+
+.showAnswer,
+.answer {
+	flex-grow: 0;
+	font-family: 'jsdanger', serif;
+	font-size: calc(0.75em + 1vw);
+	padding-top: 1em;
+	text-align: center;
+	text-shadow: 0 0 10px black;
 }
 
 .showAnswer {
-	padding-top: 1em;
-	flex-grow: 0;
-	font-size: 2em;
-	text-align: center;
-	text-align: center;
 	text-decoration: underline;
 }
 
 .answer {
-	padding-top: 1em;
-	flex-grow: 0;
-	font-size: 2em;
-	text-align: center;
+	color: var(--yellow);
 }
