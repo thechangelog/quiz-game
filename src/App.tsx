@@ -45,44 +45,44 @@ export default factory(function App({ middleware: { icache, store } }) {
 				</button>
 			</div>
 			<div classes={css.gameWrapper}>
-				{currentQuestion ? (
-					<div key="currentQuestion" classes={css.currentQuestion}>
-						<div
-							onclick={() => {
-								executor(setCurrentQuestion)({
-									question: undefined,
-									category: undefined
-								});
-								icache.set('showAnswer', false);
-							}}
-							classes={css.clue}
-						>
-							{currentQuestion.clue}
-						</div>
-						{showAnswer ? (
-							<div classes={css.answer}>{currentQuestion.answer}</div>
-						) : (
+				<div key="grid" classes={css.grid}>
+					{round.categories.map(({ name, questions }) => (
+						<Category key={name} name={name} questions={questions} />
+					))}
+
+					{currentQuestion ? (
+						<div key="currentQuestion" classes={css.currentQuestion}>
 							<div
 								onclick={() => {
-									icache.set('showAnswer', true);
-									executor(markQuestionUsed)({
-										question: currentQuestion,
-										category: currentCategory
+									executor(setCurrentQuestion)({
+										question: undefined,
+										category: undefined
 									});
+									icache.set('showAnswer', false);
 								}}
-								classes={css.showAnswer}
+								classes={css.clue}
 							>
-								Show answer
+								{currentQuestion.clue}
 							</div>
-						)}
-					</div>
-				) : (
-					<div key="grid" classes={css.grid}>
-						{round.categories.map(({ name, questions }) => (
-							<Category key={name} name={name} questions={questions} />
-						))}
-					</div>
-				)}
+							{showAnswer ? (
+								<div classes={css.answer}>{currentQuestion.answer}</div>
+							) : (
+								<div
+									onclick={() => {
+										icache.set('showAnswer', true);
+										executor(markQuestionUsed)({
+											question: currentQuestion,
+											category: currentCategory
+										});
+									}}
+									classes={css.showAnswer}
+								>
+									Show answer
+								</div>
+							)}
+						</div>
+					) : ''}
+				</div>
 				<div classes={css.contestants}>
 					{contestants.map((c) => (
 						<Contestant
