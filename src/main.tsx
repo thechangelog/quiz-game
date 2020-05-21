@@ -27,5 +27,10 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 	store.invalidate();
 };
 
+global.window.onbeforeunload = (e: Event) => {
+	e.preventDefault();
+	e.returnValue = true;
+};
+
 const r = renderer(() => <App />);
 r.mount({ registry });
