@@ -25,6 +25,7 @@ export default factory(function App({ middleware: { store } }) {
 	const round = rounds[currentRound];
 	const contestants = get(path('contestants'));
 	const view = get(path('view')) || 'game';
+	const { question: currentQuestion } = get(path('currentQuestion')) || { question: undefined };
 
 	return (
 		<div classes={[css.root]}>
@@ -34,7 +35,7 @@ export default factory(function App({ middleware: { store } }) {
 					classes={css.round}
 					disabled={currentRound >= numRounds - 1}
 					onclick={() => {
-						if (currentRound < numRounds - 1) {
+						if (!currentQuestion && currentRound < numRounds - 1) {
 							executor(setCurrentRound)({ round: currentRound + 1 });
 						}
 					}}
