@@ -5,6 +5,7 @@ import { loadGame, setCurrentQuestion, setCurrentRound, markQuestionUsed } from 
 
 import Contestant from './widgets/Contestant';
 import Category from './widgets/Category';
+import Question from './widgets/Question';
 
 import * as css from './App.m.css';
 
@@ -27,7 +28,6 @@ export default factory(function App({ middleware: { icache, store } }) {
 	const { question: currentQuestion, category: currentCategory } = get(
 		path('currentQuestion')
 	) || { question: undefined, category: undefined };
-	const showAnswer = icache.getOrSet('showAnswer', false);
 
 	return (
 		<div classes={[css.root]}>
@@ -51,37 +51,24 @@ export default factory(function App({ middleware: { icache, store } }) {
 					))}
 
 					{currentQuestion ? (
-						<div key="currentQuestion" classes={css.currentQuestion}>
-							<div
-								onclick={() => {
-									executor(setCurrentQuestion)({
-										question: undefined,
-										category: undefined
-									});
-									icache.set('showAnswer', false);
-								}}
-								classes={css.clue}
-							>
-								{currentQuestion.clue}
-							</div>
-							{showAnswer ? (
-								<div classes={css.answer}>{currentQuestion.answer}</div>
-							) : (
-								<div
-									onclick={() => {
-										icache.set('showAnswer', true);
-										executor(markQuestionUsed)({
-											question: currentQuestion,
-											category: currentCategory
-										});
-									}}
-									classes={css.showAnswer}
-								>
-									Show Answer
-								</div>
-							)}
-						</div>
-					) : ''}
+						<Question
+							question={currentQuestion}
+							onClick={() => {
+								executor(setCurrentQuestion)({
+									question: undefined,
+									category: undefined
+								});
+							}}
+							onShowAnswer={() => {
+								executor(markQuestionUsed)({
+									question: currentQuestion,
+									category: currentCategory
+								});
+							}}
+						/>
+					) : (
+						''
+					)}
 				</div>
 				<div classes={css.contestants}>
 					{contestants.map((c) => (
