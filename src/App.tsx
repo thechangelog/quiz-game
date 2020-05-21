@@ -40,7 +40,8 @@ export default factory(function App({ middleware: { store } }) {
 						}
 					}}
 				>
-					Round {String(currentRound + 1)}: {round.name}
+					<div classes={css.roundNumber}>Round {String(currentRound + 1)}</div>
+					<div>{round.name}</div>
 				</button>
 			</div>
 			{view === 'game' ? (

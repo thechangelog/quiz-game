@@ -39,6 +39,10 @@
 	margin-bottom: 2.5vw;
 }
 
+.roundNumber {
+	font-size: calc(1em - 0.75vw);
+}
+
 .title {
 	background: url('/assets/logo_3x.png') center no-repeat;
 	background-size: 100%;
@@ -55,6 +59,7 @@
 	border: none;
 	color: var(--yellow);
 	font-size: calc(1em + 1vw);
+	text-align: left;
 }
 
 .gameWrapper {
