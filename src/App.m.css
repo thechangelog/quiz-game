@@ -15,6 +15,7 @@
 	justify-content: space-around;
 	padding: 5vw;
 	position: relative;
+	max-width: 1280px;
 }
 
 .root:before {
@@ -32,7 +33,6 @@
 
 .header {
 	align-items: flex-end;
-	justify-content: space-between;
 	display: flex;
 	color: var(--white);
 	width: 100%;
