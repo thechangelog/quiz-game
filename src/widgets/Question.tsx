@@ -21,15 +21,14 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 	} = properties();
 	const showAnswer = icache.getOrSet('showAnswer', false);
 	return (
-		<div classes={[css.root, final && css.finalQuestion]}>
-			<div classes={css.clue} onclick={() => onClick && onClick()}>
-				{clue}
-			</div>
+		<div classes={[css.root, final && css.finalQuestion]} onclick={() => onClick && onClick()}>
+			<div classes={css.clue}>{clue}</div>
 			{showAnswer ? (
 				<div classes={css.answer}>{answer}</div>
 			) : (
 				<div
-					onclick={() => {
+					onclick={(event: MouseEvent) => {
+						event.stopPropagation();
 						icache.set('showAnswer', true);
 						onShowAnswer && onShowAnswer();
 					}}
