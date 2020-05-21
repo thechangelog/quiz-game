@@ -11,6 +11,17 @@ import App from './App';
 const store = new Store<State>();
 const registry = registerStoreInjector(store);
 
+const getNextRound = (round: 1 | -1) => {
+	const { get, path } = store;
+	const currentRound = get(path('currentRound'));
+	const rounds = get(path('rounds'));
+	return (currentRound + round) % rounds.length === 0
+		? 0
+		: currentRound + round < 0
+		? rounds.length - 1
+		: currentRound + round;
+};
+
 global.document.onkeyup = (event: KeyboardEvent) => {
 	const { path, apply } = store;
 	switch (event.key) {
@@ -22,6 +33,12 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 		case 'c':
 		case 'C':
 			apply([replace(path('view'), 'contestants')]);
+			break;
+		case 'ArrowRight':
+			apply([replace(path('currentRound'), getNextRound(1))]);
+			break;
+		case 'ArrowLeft':
+			apply([replace(path('currentRound'), getNextRound(-1))]);
 			break;
 	}
 	store.invalidate();
