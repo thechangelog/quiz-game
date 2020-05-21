@@ -40,4 +40,5 @@ export interface State {
 		question: Question | undefined;
 	};
 	rounds: Round[];
+	view: 'game' | 'contestants';
 }

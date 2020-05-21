@@ -2,7 +2,7 @@ import { tsx, create } from '@dojo/framework/core/vdom';
 import store from './middleware/store';
 import { loadGame, setCurrentRound } from './processes/game';
 
-import Contestant from './widgets/Contestant';
+import Contestants from './widgets/Contestants';
 import Round from './widgets/Round';
 import FinalRound from './widgets/FinalRound';
 
@@ -24,6 +24,7 @@ export default factory(function App({ middleware: { store } }) {
 	const currentRound = get(path('currentRound'));
 	const round = rounds[currentRound];
 	const contestants = get(path('contestants'));
+	const view = get(path('view')) || 'game';
 
 	return (
 		<div classes={[css.root]}>
@@ -40,23 +41,18 @@ export default factory(function App({ middleware: { store } }) {
 					Round {String(currentRound + 1)}: {round.name}
 				</button>
 			</div>
-			<div classes={css.gameWrapper}>
-				{round.format === 'standard' ? (
-					<Round round={round} />
-				) : (
-					<FinalRound round={round} />
-				)}
-				<div classes={css.contestants}>
-					{contestants.map((c) => (
-						<Contestant
-							key={c.name}
-							name={c.name}
-							handle={c.handle}
-							score={c.score || 0}
-						/>
-					))}
+			{view === 'game' ? (
+				<div classes={css.gameWrapper}>
+					{round.format === 'standard' ? (
+						<Round round={round} />
+					) : (
+						<FinalRound round={round} />
+					)}
+					<Contestants contestants={contestants} />
 				</div>
-			</div>
+			) : (
+				<Contestants horizontal contestants={contestants} />
+			)}
 		</div>
 	);
 });

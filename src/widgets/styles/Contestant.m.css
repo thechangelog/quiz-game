@@ -21,6 +21,10 @@
 	margin-right: 24px;
 }
 
+.large .avatar {
+	height: 200px;
+}
+
 .root:hover .avatar {
 	border-color: var(--yellow);
 }
@@ -36,11 +40,16 @@
 	margin-bottom: 0.25em;
 }
 
+.large .name {
+	font-size: calc(1em + 0.75vw);
+}
+
 .score {
 	font-family: "Pragati Narrow:", sans-serif;
 	font-weight: bold;
 	font-size: 2em;
 }
+
 
 .negative {
 	color: var(--red);

@@ -4,16 +4,22 @@ import { Contestant as ContestantData } from '../interfaces';
 import store from '../middleware/store';
 import { incrementScore, decrementScore } from '../processes/game';
 
-export interface ContestantProperties extends ContestantData {}
+export interface ContestantProperties {
+	contestant: ContestantData;
+	large?: boolean;
+}
 
 const factory = create({ store }).properties<ContestantProperties>();
 
 export const Contestant = factory(function Contestant({ properties, middleware: { store } }) {
-	const { name, handle, score } = properties();
+	const {
+		large,
+		contestant: { name, handle, score }
+	} = properties();
 	const currentQuestion = store.get(store.path('currentQuestion'));
 
 	return (
-		<div classes={css.root}>
+		<div classes={[css.root, large && css.large]}>
 			<div classes={css.actions}>
 				<button
 					onclick={() => {
