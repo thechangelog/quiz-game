@@ -17,6 +17,10 @@
 	text-shadow: 0 0 10px black;
 }
 
+.finalQuestion {
+	position: unset;
+}
+
 .clue {
 	cursor: pointer;
 	font-family: 'jsdanger', serif;

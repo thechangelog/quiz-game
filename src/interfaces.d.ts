@@ -20,7 +20,7 @@ export interface Category {
 
 export interface Round {
 	name: string;
-	format: 'standard';
+	format: 'standard' | 'final';
 	categories: Category[];
 }
 

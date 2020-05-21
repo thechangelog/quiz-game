@@ -1,17 +1,16 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
-import icache from '@dojo/framework/core/middleware/icache';
 import store from './middleware/store';
-import { loadGame, setCurrentQuestion, setCurrentRound, markQuestionUsed } from './processes/game';
+import { loadGame, setCurrentRound } from './processes/game';
 
 import Contestant from './widgets/Contestant';
-import Category from './widgets/Category';
-import Question from './widgets/Question';
+import Round from './widgets/Round';
+import FinalRound from './widgets/FinalRound';
 
 import * as css from './App.m.css';
 
-const factory = create({ icache, store });
+const factory = create({ store });
 
-export default factory(function App({ middleware: { icache, store } }) {
+export default factory(function App({ middleware: { store } }) {
 	const { get, path, executor } = store;
 
 	const gameName = get(path('name'));
@@ -25,9 +24,6 @@ export default factory(function App({ middleware: { icache, store } }) {
 	const currentRound = get(path('currentRound'));
 	const round = rounds[currentRound];
 	const contestants = get(path('contestants'));
-	const { question: currentQuestion, category: currentCategory } = get(
-		path('currentQuestion')
-	) || { question: undefined, category: undefined };
 
 	return (
 		<div classes={[css.root]}>
@@ -45,31 +41,11 @@ export default factory(function App({ middleware: { icache, store } }) {
 				</button>
 			</div>
 			<div classes={css.gameWrapper}>
-				<div key="grid" classes={css.grid}>
-					{round.categories.map(({ name, questions }) => (
-						<Category key={name} name={name} questions={questions} />
-					))}
-
-					{currentQuestion ? (
-						<Question
-							question={currentQuestion}
-							onClick={() => {
-								executor(setCurrentQuestion)({
-									question: undefined,
-									category: undefined
-								});
-							}}
-							onShowAnswer={() => {
-								executor(markQuestionUsed)({
-									question: currentQuestion,
-									category: currentCategory
-								});
-							}}
-						/>
-					) : (
-						''
-					)}
-				</div>
+				{round.format === 'standard' ? (
+					<Round round={round} />
+				) : (
+					<FinalRound round={round} />
+				)}
 				<div classes={css.contestants}>
 					{contestants.map((c) => (
 						<Contestant

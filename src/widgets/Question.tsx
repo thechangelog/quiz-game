@@ -7,6 +7,7 @@ export interface QuestionProperties {
 	question: QuestionData;
 	onClick?: (question?: QuestionData) => void;
 	onShowAnswer?: () => void;
+	final?: boolean;
 }
 
 const factory = create({ icache }).properties<QuestionProperties>();
@@ -15,11 +16,12 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 	const {
 		question: { clue, answer },
 		onClick,
-		onShowAnswer
+		onShowAnswer,
+		final
 	} = properties();
 	const showAnswer = icache.getOrSet('showAnswer', false);
 	return (
-		<div classes={css.root}>
+		<div classes={[css.root, final && css.finalQuestion]}>
 			<div classes={css.clue} onclick={() => onClick && onClick()}>
 				{clue}
 			</div>
