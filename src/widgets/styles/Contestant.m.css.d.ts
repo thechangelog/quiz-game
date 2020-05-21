@@ -7,3 +7,4 @@ export const name: string;
 export const score: string;
 export const negative: string;
 export const positive: string;
+export const actionButton: string;

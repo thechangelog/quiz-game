@@ -29,8 +29,9 @@ export default factory(function App({ middleware: { store } }) {
 	return (
 		<div classes={[css.root]}>
 			<div classes={css.header}>
-				<h1>{gameName}</h1>
+				<h1 classes={css.title}>{gameName}</h1>
 				<button
+					classes={css.round}
 					disabled={currentRound >= numRounds - 1}
 					onclick={() => {
 						if (currentRound < numRounds - 1) {
@@ -42,7 +43,7 @@ export default factory(function App({ middleware: { store } }) {
 				</button>
 			</div>
 			{view === 'game' ? (
-				<div classes={css.gameWrapper}>
+				<div key="game-view" classes={css.gameWrapper}>
 					{round.format === 'standard' ? (
 						<Round round={round} />
 					) : (
@@ -51,7 +52,7 @@ export default factory(function App({ middleware: { store } }) {
 					<Contestants contestants={contestants} />
 				</div>
 			) : (
-				<Contestants horizontal contestants={contestants} />
+				<Contestants key="contestants-view" horizontal contestants={contestants} />
 			)}
 		</div>
 	);

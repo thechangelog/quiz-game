@@ -22,6 +22,7 @@ export const Contestant = factory(function Contestant({ properties, middleware: 
 		<div classes={[css.root, large && css.large]}>
 			<div classes={css.actions}>
 				<button
+					classes={css.actionButton}
 					onclick={() => {
 						store.executor(incrementScore)({
 							handle,
@@ -35,6 +36,7 @@ export const Contestant = factory(function Contestant({ properties, middleware: 
 					+
 				</button>
 				<button
+					classes={css.actionButton}
 					onclick={() => {
 						store.executor(decrementScore)({
 							handle,
