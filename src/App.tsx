@@ -15,7 +15,7 @@ export default factory(function App({ middleware: { store } }) {
 
 	const gameName = get(path('name'));
 	if (!gameName) {
-		executor(loadGame)({ url: './assets/game.json' });
+		executor(loadGame)({ url: './assets/halfstack.json' });
 		return <div key="loading">Loading</div>;
 	}
 

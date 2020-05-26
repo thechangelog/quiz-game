@@ -1,0 +1,372 @@
+{
+  "game": {
+    "name": "JS Danger: HalfStack Edition",
+    "contestants": [
+      {
+        "name": "Emma",
+        "handle": "emmabostian",
+        "score": 0
+      },
+      {
+        "name": "Divya",
+        "handle": "shortdiv",
+        "score": 0
+      },
+      {
+        "name": "Suz",
+        "handle": "noopkat",
+        "score": 0
+      }
+    ],
+    "rounds": [
+      {
+        "name": "Trouble",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "Array Prototypes",
+            "hint": "",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Returns true if every element in the array satisfies the testing function",
+                "answer": "Array.prototype.every"
+              },
+              {
+                "value": 200,
+                "clue": "Returns a new array containing the results of calling the given function on every element.",
+                "answer": "Array.prototype.map"
+              },
+              {
+                "value": 300,
+                "clue": "Extracts a section of the calling array and returns a new array.",
+                "answer": "Array.prototype.slice"
+              },
+              {
+                "value": 400,
+                "clue": "Returns a new array that is this array joined with other array(s) and/or value(s).",
+                "answer": "Array.prototype.concat"
+
+              },
+              {
+                "value": 500,
+                "clue": "Adds one or more elements to the front of an array, and returns the new length of the array.",
+                "answer": "Array.prototype.unshift"
+              }
+            ]
+          },
+          {
+            "name": "The Internet of T",
+            "hint": "Answers start with the letter T",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Rotate, scale, skew, or translate an element.",
+                "answer": "Transform"
+              },
+              {
+                "value": 200,
+                "clue": "The heart of every HTML document.",
+                "answer": "Text"
+              },
+              {
+                "value": 300,
+                "clue": "An object's sometimes illusive self reference",
+                "answer": "This"
+              },
+              {
+                "value": 400,
+                "clue": "When are we? `new Date()` without any arguments",
+                "answer": "Today"
+              },
+              {
+                "value": 500,
+                "clue": "This group meets every two months to evolve the definition of JavaScript",
+                "answer": "TC39"
+              }
+            ]
+          },
+          {
+            "name": "Name That Stack",
+            "hint": "",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "The LAMP stack",
+                "answer": "Linux, Apache, MySQL, PHP"
+              },
+              {
+                "value": 200,
+                "clue": "This stack would go well spread on a piece of toast",
+                "answer": "Jamstack"
+              },
+              {
+                "value": 300,
+                "clue": "A majestic 4-footed beast or a tech stack centered around a popular search solution",
+                "answer": "The ELK Stack",
+                "extra": "Elasticsearch, Logstash, and Kibana"
+              },
+              {
+                "value": 400,
+                "clue": "The A is controversial, but these 3 technologies are staples of the MEAN stack",
+                "answer": "MongoDB, Express.js, and Node.js",
+                "extra": "MERN and MEVN are common alternatives"
+              },
+              {
+                "value": 500,
+                "clue": "The team at Neo4j would love you to use this stack. It also includes GraphQL and React",
+                "answer": "The GRANDstack",
+                "extra": "GraphQL, React, Apollo, and Neo4j"
+              }
+            ]
+          },
+          {
+            "name": "Turns Out! JS",
+            "hint": "Answers are languages that compile to JavaScript",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Google's language that that compiles to native machine code got its 2nd wind thanks to the Flutter framework.",
+                "answer": "Dart"
+              },
+              {
+                "value": 200,
+                "clue": "Boasting static type-checking and other tooling goodies. This claims to be \"JavaScript that scales\"",
+                "answer": "TypeScript"
+              },
+              {
+                "value": 300,
+                "clue": "This purely functional programming language has a built-in architecture for building front ends",
+                "answer": "Elm"
+              },
+              {
+                "value": 400,
+                "clue": "This controversial language aimed to expose the good parts of JS with a cleaner syntax. Some of its ideas inspired JavaScript features.",
+                "answer": "CoffeeScript"
+              },
+              {
+                "value": 500,
+                "clue": "Created and maintained by Facebook, this language offers a new syntax for the OCaml compiler",
+                "answer": "Reason"
+              }
+            ]
+          },
+          {
+            "name": "It's All (HTML) Semantics",
+            "hint": "",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "A section of a page whose purpose is to provide navigation links, either within the current document or to other documents",
+                "answer": "<nav>"
+              },
+              {
+                "value": 200,
+                "clue": "Represents text which is highlighted for reference or notation purposes",
+                "answer": "<mark>"
+              },
+              {
+                "value": 300,
+                "clue": "Creates a disclosure widget in which information is visible only when the widget is toggled into an \"open\" state",
+                "answer": "<details>",
+                "extra": "Popular on GitHub for populating stack traces, etc"
+              },
+              {
+                "value": 400,
+                "clue": "A self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable",
+                "answer": "<article>"
+              },
+              {
+                "value": 500,
+                "clue": "Represents a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location.",
+                "answer": "<wbr>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Double Trouble",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "Obscure Web APIs",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Shake, rattle, and roll your way to unique features with this API's hardware knowledge",
+                "answer": "Vibration API"
+              },
+              {
+                "value": 400,
+                "clue": "This API replaces the now-deprecated WebVR API to make room for AR too",
+                "answer": "WebXR Device API"
+              },
+              {
+                "value": 600,
+                "clue": "What the what? This API gives you visibility into tasks that take 50 milliseconds or more",
+                "answer": "Long Tasks API"
+              },
+              {
+                "value": 800,
+                "clue": "A set of APIs allowing the manipulation of CSS from JavaScript",
+                "answer": "CSSOM"
+
+              },
+              {
+                "value": 1000,
+                "clue": "This makes it possible for a server to send new data to a web page at any time, by pushing messages to the web page",
+                "answer": "Server-sent Events"
+              }
+            ]
+          },
+          {
+            "name": "document.title",
+            "hint": "Popular websites self-identified by their own titles",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "News and podcasts for developers (😏)",
+                "answer": "Changelog.com"
+              },
+              {
+                "value": 400,
+                "clue": "Where Developers Learn, Share, & Build Careers",
+                "answer": "StackOverflow.com"
+              },
+              {
+                "value": 600,
+                "clue": "the front page of the internet",
+                "answer": "Reddit.com"
+              },
+              {
+                "value": 800,
+                "clue": "Discover the World’s Top Designers & Creative Professionals",
+                "answer": "Dribbble.com"
+
+              },
+              {
+                "value": 1000,
+                "clue": "the JavaScript organization",
+                "answer": "JS.org"
+              }
+            ]
+          },
+          {
+            "name": "Node Drama",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "The runtime's original developer is now working on rearranging its letters",
+                "answer": "Ryan Dahl"
+              },
+              {
+                "value": 400,
+                "clue": "A December 2014 fork that was later merged in after establishing the Node.js Foundation",
+                "answer": "io.js"
+              },
+              {
+                "value": 600,
+                "clue": "A second major fork, dubbed 'ayo', occurred in 2017 amid controversy surrounding violation of this document",
+                "answer": "Code of Conduct"
+              },
+              {
+                "value": 800,
+                "clue": "After IBM acquired the owner of this popular Node package, its lead maintainer was forced off the project.",
+                "answer": "Express.js",
+                "extra": "Doug Wilson worked for IBM competitor Sencha at the time"
+              },
+              {
+                "value": 1000,
+                "clue": "'drama' is a package that implements this conceptual model for JavaScript and Node.js",
+                "answer": "The Actor Model"
+              }
+            ]
+          },
+          {
+            "name": "CSS Select ⭐️",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Select all elements with class='party'",
+                "answer": ".party"
+              },
+              {
+                "value": 400,
+                "clue": "Select active links",
+                "answer": "a:active"
+              },
+              {
+                "value": 600,
+                "clue": "Select input elements with no \"required\" attribute",
+                "answer": "input:optional"
+              },
+              {
+                "value": 800,
+                "clue": "Select every <p> element that is the last <p> element of its parent",
+                "answer": "p:last-of-type"
+
+              },
+              {
+                "value": 1000,
+                "clue": "Select all elements with a\"_blank\" target",
+                "answer": "[target=_blank]"
+              }
+            ]
+          },
+          {
+            "name": "Talk Protocol To Me",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Say HELO to start the conversation",
+                "answer": "Simple Mail Transfer Protocol (SMTP)"
+              },
+              {
+                "value": 400,
+                "clue": "This old school protocol for sharing files typically runs unencrypted on port 21",
+                "answer": "File Transfer Protocol (FTP)"
+              },
+              {
+                "value": 600,
+                "clue": "Respond with SYN-ACK if you got this",
+                "answer": "Transmission Control Protocol (TCP)"
+              },
+              {
+                "value": 800,
+                "clue": "Ping! This IP protocol was developed by DARPA in 1981 and is still used today",
+                "answer": "Internet Control Message Protocol (ICMP)"
+
+              },
+              {
+                "value": 1000,
+                "clue": "I'd tell you a joke about this protocol, but you may not get it. And that's totally OK",
+                "answer": "User Datagram Protocol (UDP)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Final Trouble",
+        "format": "final",
+        "categories": [
+          {
+            "name": "JS Party Animals",
+            "hint": "",
+            "questions": [
+              {
+                "clue": "This prolific JS Party panelist has appeared on 67 of our 129 episodes",
+                "answer": "Kevin Ball (KBall)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
