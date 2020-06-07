@@ -21,11 +21,19 @@
 	position: unset;
 }
 
+.category {
+	font-family: 'jsdanger', serif;
+	font-size: 1.5em;
+	flex-grow: 2;
+	text-align: left;
+}
+
 .clue {
 	cursor: pointer;
 	font-family: 'jsdanger', serif;
 	font-size: 3em;
 	padding: 1vw;
+	flex-grow: 2;
 }
 
 .showAnswer,

@@ -28,6 +28,7 @@ export const Round = factory(function Round({ middleware: { store }, properties 
 			{currentQuestion ? (
 				<Question
 					question={currentQuestion}
+					category={currentCategory}
 					onClick={() => {
 						executor(setCurrentQuestion)({
 							question: undefined,
