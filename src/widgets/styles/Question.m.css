@@ -21,14 +21,24 @@
 	position: unset;
 }
 
+.questionInfo {
+	display: flex;
+	flex-grow: 2;
+	justify-content: space-between;
+}
+
 .category {
 	font-family: 'jsdanger', serif;
 	font-size: 1.5em;
-	flex-grow: 2;
-	text-align: left;
+}
+
+.value {
+	font-family: 'jsdanger', serif;
+	font-size: 1.5em;
 }
 
 .imageWrapper {
+	flex-grow: 2;
 }
 
 .image {

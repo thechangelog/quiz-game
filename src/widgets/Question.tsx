@@ -5,7 +5,7 @@ import { Question as QuestionData } from '../interfaces';
 
 export interface QuestionProperties {
 	question: QuestionData;
-	category?: string;
+	category: string;
 	onClick?: (question?: QuestionData) => void;
 	onShowAnswer?: () => void;
 	final?: boolean;
@@ -16,7 +16,7 @@ const factory = create({ icache }).properties<QuestionProperties>();
 export const Question = factory(function Question({ middleware: { icache }, properties }) {
 	const {
 		category,
-		question: { clue, answer, image },
+		question: { clue, answer, image, value },
 		onClick,
 		onShowAnswer,
 		final
@@ -24,7 +24,10 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 	const showAnswer = icache.getOrSet('showAnswer', false);
 	return (
 		<div classes={[css.root, final && css.finalQuestion]} onclick={() => onClick && onClick()}>
-			{category && <div classes={css.category}>Category: {category}</div>}
+			<div classes={css.questionInfo}>
+				<div classes={css.category}>Category: {category}</div>
+				{value && <div classes={css.value}>Value: {`${value}`}</div>}
+			</div>
 			{image && (
 				<div classes={css.imageWrapper}>
 					<img classes={css.image} src={image} />

@@ -16,7 +16,7 @@ export const Round = factory(function Round({ middleware: { store }, properties 
 	const { round } = properties();
 	const { get, path, executor } = store;
 	const { categories } = round;
-	const { question: currentQuestion, category: currentCategory } = get(
+	const { question: currentQuestion, category: currentCategory = '' } = get(
 		path('currentQuestion')
 	) || { question: undefined, category: undefined };
 	return (

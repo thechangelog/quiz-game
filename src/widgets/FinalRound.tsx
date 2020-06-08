@@ -21,12 +21,14 @@ export const FinalRound = factory(function FinalRound({ middleware: { store }, p
 		}
 	] = round.categories;
 	const currentQuestion = get(path('currentQuestion', 'question'));
+	const currentCategory = get(path('currentQuestion', 'category')) || '';
 	return (
 		<div classes={css.root}>
 			{currentQuestion ? (
 				<Question
 					final
 					question={question}
+					category={currentCategory}
 					onClick={() => {
 						executor(setCurrentQuestion)({
 							question: undefined,
