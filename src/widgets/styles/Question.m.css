@@ -28,6 +28,14 @@
 	text-align: left;
 }
 
+.imageWrapper {
+}
+
+.image {
+	height: auto;
+	max-width: 75%;
+}
+
 .clue {
 	cursor: pointer;
 	font-family: 'jsdanger', serif;

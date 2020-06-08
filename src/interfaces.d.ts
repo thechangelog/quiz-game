@@ -8,6 +8,7 @@ export interface Question {
 	value: number;
 	clue: string;
 	answer: string;
+	image?: string;
 	extra?: string;
 	used?: boolean;
 }

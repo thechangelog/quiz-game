@@ -16,7 +16,7 @@ const factory = create({ icache }).properties<QuestionProperties>();
 export const Question = factory(function Question({ middleware: { icache }, properties }) {
 	const {
 		category,
-		question: { clue, answer },
+		question: { clue, answer, image },
 		onClick,
 		onShowAnswer,
 		final
@@ -25,6 +25,11 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 	return (
 		<div classes={[css.root, final && css.finalQuestion]} onclick={() => onClick && onClick()}>
 			{category && <div classes={css.category}>Category: {category}</div>}
+			{image && (
+				<div classes={css.imageWrapper}>
+					<img classes={css.image} src={image} />
+				</div>
+			)}
 			<div classes={css.clue}>{clue}</div>
 			{showAnswer ? (
 				<div classes={css.answer}>{answer}</div>
