@@ -25,8 +25,8 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 	return (
 		<div classes={[css.root, final && css.finalQuestion]} onclick={() => onClick && onClick()}>
 			<div classes={css.questionInfo}>
-				<div classes={css.category}>Category: {category}</div>
-				{value && <div classes={css.value}>Value: {`${value}`}</div>}
+				<div classes={css.category}>{category}</div>
+				{value && <div classes={css.value}>{`${value}`}</div>}
 			</div>
 			{image && (
 				<div classes={css.imageWrapper}>
