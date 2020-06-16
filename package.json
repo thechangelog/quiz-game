@@ -7,6 +7,7 @@
     "build": "dojo build --mode dist",
     "build:dev": "dojo build --mode dev",
     "start": "dojo build --mode dev --watch --serve",
+    "server": "ts-node server.ts",
     "test": "dojo test",
     "test:unit": "dojo build --mode unit && dojo test --unit --config local",
     "test:functional": "dojo build --mode functional && dojo test --functional --config local",
@@ -31,8 +32,13 @@
     "@dojo/cli": "^6.0.0",
     "@dojo/cli-build-app": "^6.0.0",
     "@dojo/cli-test-intern": "^6.0.0",
+    "@types/form-data": "^2.5.0",
     "@types/node": "~9.6.5",
+    "@types/node-fetch": "^2.5.7",
+    "form-data": "^3.0.0",
+    "node-fetch": "^2.6.0",
     "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
     "typescript": "~3.4.5"
   }
 }

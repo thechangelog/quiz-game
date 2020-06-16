@@ -50,10 +50,7 @@ export const Contestant = factory(function Contestant({ properties, middleware: 
 					-
 				</button>
 			</div>
-			<img
-				classes={css.avatar}
-				src={`https://avatar-redirect.appspot.com/twitter/${handle}`}
-			/>
+			<img classes={css.avatar} src={`http://localhost:8888/?handle=${handle}`} />
 			<div classes={css.info}>
 				<div classes={css.name}>{name}</div>
 				<div classes={[css.score, score >= 0 ? css.positive : css.negative]}>
