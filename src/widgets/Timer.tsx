@@ -3,16 +3,19 @@ import * as css from './styles/Timer.m.css';
 import icache from '@dojo/framework/core/middleware/icache';
 
 export interface TimerProperties {
-	active?: boolean;
 	length?: number;
 	onTimeEnd?: () => void;
 	onInterval?: (remaining: number) => void;
+	soundEffects?: boolean;
 }
+
+const audio = new Audio('assets/incorrect.mp3');
+const playBuzzer = () => audio.play();
 
 const factory = create({ icache }).properties<TimerProperties>();
 
 export const Timer = factory(function Timer({ middleware: { icache }, properties }) {
-	const { length = 5, onTimeEnd } = properties();
+	const { length = 5, onTimeEnd, soundEffects } = properties();
 	const seconds = icache.getOrSet('seconds', length);
 	const isActive = icache.getOrSet('isActive', false);
 	const interval = icache.getOrSet<number | undefined>('interval', undefined);
@@ -29,6 +32,7 @@ export const Timer = factory(function Timer({ middleware: { icache }, properties
 	if (isActive && seconds === 0) {
 		reset();
 		onTimeEnd && onTimeEnd();
+		soundEffects && playBuzzer();
 	} else if ((!isActive && interval) || seconds === 0) {
 		reset();
 	} else if (isActive && !interval) {
@@ -42,7 +46,14 @@ export const Timer = factory(function Timer({ middleware: { icache }, properties
 	}
 
 	return (
-		<div classes={css.root} onclick={() => icache.set('isActive', !isActive)}>
+		<div
+			classes={css.root}
+			onclick={(event: MouseEvent) => {
+				const isActive = icache.get('isActive');
+				event.stopPropagation();
+				icache.set('isActive', !isActive);
+			}}
+		>
 			{Array(length * 2 - 1)
 				.fill(0)
 				.map((_, i) => {
