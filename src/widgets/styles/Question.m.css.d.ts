@@ -8,3 +8,4 @@ export const image: string;
 export const clue: string;
 export const showAnswer: string;
 export const answer: string;
+export const timer: string;

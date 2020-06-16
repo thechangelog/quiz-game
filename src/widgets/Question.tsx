@@ -2,6 +2,7 @@ import { create, tsx } from '@dojo/framework/core/vdom';
 import icache from '@dojo/framework/core/middleware/icache';
 import * as css from './styles/Question.m.css';
 import { Question as QuestionData } from '../interfaces';
+import Timer from './Timer';
 
 export interface QuestionProperties {
 	question: QuestionData;
@@ -26,7 +27,7 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 		<div classes={[css.root, final && css.finalQuestion]} onclick={() => onClick && onClick()}>
 			<div classes={css.questionInfo}>
 				<div classes={css.category}>{category}</div>
-				{value && <div classes={css.value}>{`${value}`}</div>}
+				<div classes={css.value}>{value && `${value}`}</div>
 			</div>
 			{image && (
 				<div classes={css.imageWrapper}>
@@ -37,16 +38,21 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 			{showAnswer ? (
 				<div classes={css.answer}>{answer}</div>
 			) : (
-				<div
-					onclick={(event: MouseEvent) => {
-						event.stopPropagation();
-						icache.set('showAnswer', true);
-						onShowAnswer && onShowAnswer();
-					}}
-					classes={css.showAnswer}
-				>
-					Show Answer
-				</div>
+				<virtual>
+					<div
+						onclick={(event: MouseEvent) => {
+							event.stopPropagation();
+							icache.set('showAnswer', true);
+							onShowAnswer && onShowAnswer();
+						}}
+						classes={css.showAnswer}
+					>
+						Show Answer
+					</div>
+					<div classes={css.timer}>
+						<Timer soundEffects />
+					</div>
+				</virtual>
 			)}
 		</div>
 	);
