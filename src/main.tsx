@@ -5,6 +5,7 @@ import Store from '@dojo/framework/stores/Store';
 import { replace } from '@dojo/framework/stores/state/operations';
 import { State } from './interfaces';
 import '@dojo/themes/dojo/index.css';
+import { playAudio, stopAudio } from './player';
 
 import App from './App';
 
@@ -23,7 +24,8 @@ const getNextRound = (round: 1 | -1) => {
 };
 
 global.document.onkeyup = (event: KeyboardEvent) => {
-	const { path, apply } = store;
+	const { path, apply, get } = store;
+	stopAudio();
 	switch (event.key) {
 		case 'Escape':
 		case 'q':
@@ -48,6 +50,28 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 			break;
 		case '0':
 			apply([replace(path('winner'), undefined)]);
+			break;
+		case 'b':
+		case 'B':
+			playAudio('timesUp');
+			break;
+		case 'y':
+			playAudio('correctAnswer');
+			break;
+		case 'Y':
+			playAudio('correctSteal');
+			break;
+		case 'n':
+			playAudio('wrongAnswer');
+			break;
+		case 'N':
+			playAudio('wrongSteal');
+			break;
+		case 't':
+			playAudio('jsDangerTheme');
+			break;
+		case 'T':
+			playAudio('jsDangerStressTheme');
 			break;
 	}
 	store.invalidate();
