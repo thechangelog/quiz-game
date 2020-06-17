@@ -19,8 +19,7 @@
 
 .root:before {
 	background: url(/assets/jsparty-abstract-art.svg) no-repeat;
-	content: "";
-	width: 80vw;
+	content: ""; width: 80vw;
 	height: 80vw;
 	opacity: 0.4;
 	position: fixed;
@@ -67,4 +66,13 @@
 	justify-content: space-between;
 	width: 100%;
 
+}
+
+.winner {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-family: 'jsdanger', serif;
+	color: var(--yellow);
+	zoom: 300%;
 }

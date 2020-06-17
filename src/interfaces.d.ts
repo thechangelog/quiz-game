@@ -42,4 +42,5 @@ export interface State {
 	};
 	rounds: Round[];
 	view: 'game' | 'contestants';
+	winner: Contestant | undefined;
 }

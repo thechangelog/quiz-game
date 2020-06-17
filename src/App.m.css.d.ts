@@ -4,3 +4,4 @@ export const roundNumber: string;
 export const title: string;
 export const round: string;
 export const gameWrapper: string;
+export const winner: string;

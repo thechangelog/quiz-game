@@ -40,6 +40,15 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 		case 'ArrowLeft':
 			apply([replace(path('currentRound'), getNextRound(-1))]);
 			break;
+		case '1':
+		case '2':
+		case '3':
+			const contestants = get(path('contestants'));
+			apply([replace(path('winner'), contestants[+event.key - 1])]);
+			break;
+		case '0':
+			apply([replace(path('winner'), undefined)]);
+			break;
 	}
 	store.invalidate();
 };

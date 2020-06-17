@@ -3,6 +3,7 @@ import store from './middleware/store';
 import { loadGame, setCurrentRound } from './processes/game';
 
 import Contestants from './widgets/Contestants';
+import Contestant from './widgets/Contestant';
 import Round from './widgets/Round';
 import FinalRound from './widgets/FinalRound';
 
@@ -26,25 +27,33 @@ export default factory(function App({ middleware: { store } }) {
 	const contestants = get(path('contestants'));
 	const view = get(path('view')) || 'game';
 	const { question: currentQuestion } = get(path('currentQuestion')) || { question: undefined };
+	const winner = get(path('winner'));
 
 	return (
 		<div classes={[css.root]}>
 			<div classes={css.header}>
 				<h1 classes={css.title}>{gameName}</h1>
-				<button
-					classes={css.round}
-					disabled={currentRound >= numRounds - 1}
-					onclick={() => {
-						if (!currentQuestion && currentRound < numRounds - 1) {
-							executor(setCurrentRound)({ round: currentRound + 1 });
-						}
-					}}
-				>
-					<div classes={css.roundNumber}>Round {String(currentRound + 1)}</div>
-					<div>{round.name}</div>
-				</button>
+				{!winner && (
+					<button
+						classes={css.round}
+						disabled={currentRound >= numRounds - 1}
+						onclick={() => {
+							if (!currentQuestion && currentRound < numRounds - 1) {
+								executor(setCurrentRound)({ round: currentRound + 1 });
+							}
+						}}
+					>
+						<div classes={css.roundNumber}>Round {String(currentRound + 1)}</div>
+						<div>{round.name}</div>
+					</button>
+				)}
 			</div>
-			{view === 'game' ? (
+			{winner ? (
+				<div key="winner-view" classes={css.winner}>
+					<h1>Winner</h1>
+					<Contestant contestant={winner} />
+				</div>
+			) : view === 'game' ? (
 				<div key="game-view" classes={css.gameWrapper}>
 					{round.format === 'standard' ? (
 						<Round round={round} />
