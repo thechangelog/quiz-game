@@ -73,6 +73,9 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 		case 'T':
 			playAudio('jsDangerStressTheme');
 			break;
+		case 'w':
+			playAudio('jsDangerWinner');
+			break;
 	}
 	store.invalidate();
 };

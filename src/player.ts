@@ -3,6 +3,7 @@ export const sounds = {
 	correctSteal: 'Correct Steal.wav',
 	jsDangerStressTheme: 'JS Danger Stress Theme.wav',
 	jsDangerTheme: 'JS Danger Theme.wav',
+	jsDangerWinner: 'JS Danger Winner.wav',
 	timesUp: 'Times Up.wav',
 	wrongAnswer: 'Wrong Answer.wav',
 	wrongSteal: 'Wrong Steal.wav'
