@@ -20,7 +20,7 @@ export const Round = factory(function Round({ middleware: { store }, properties 
 		path('currentQuestion')
 	) || { question: undefined, category: undefined };
 	return (
-		<div key="grid" classes={css.root}>
+		<div key="grid" classes={[css.root, categories.length === 4 && css.fourColumns]}>
 			{categories.map(({ name, questions }) => (
 				<Category key={name} name={name} questions={questions} />
 			))}

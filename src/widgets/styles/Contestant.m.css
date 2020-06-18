@@ -65,6 +65,8 @@
 }
 
 .actionButton {
+	outline: none;
+	cursor: pointer;
 	background: none;
 	border: 0;
 	color: white;

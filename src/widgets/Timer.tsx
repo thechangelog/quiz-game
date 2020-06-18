@@ -7,6 +7,7 @@ export interface TimerProperties {
 	onTimeEnd?: () => void;
 	onInterval?: (remaining: number) => void;
 	soundEffects?: boolean;
+	showTime?: boolean;
 }
 
 const audio = new Audio('assets/incorrect.mp3');
@@ -15,7 +16,7 @@ const playBuzzer = () => audio.play();
 const factory = create({ icache }).properties<TimerProperties>();
 
 export const Timer = factory(function Timer({ middleware: { icache }, properties }) {
-	const { length = 5, onTimeEnd, soundEffects } = properties();
+	const { length = 5, onTimeEnd, soundEffects, showTime } = properties();
 	const seconds = icache.getOrSet('seconds', length);
 	const isActive = icache.getOrSet('isActive', false);
 	const interval = icache.getOrSet<number | undefined>('interval', undefined);
@@ -54,23 +55,29 @@ export const Timer = factory(function Timer({ middleware: { icache }, properties
 				icache.set('isActive', !isActive);
 			}}
 		>
-			{Array(length * 2 - 1)
-				.fill(0)
-				.map((_, i) => {
-					const elapsed = length - seconds - 1;
-					return (
-						<div
-							key={`tick-${i}`}
-							classes={[
-								css.tick,
-								(i < length && elapsed < i) ||
-								(i >= length && i < length * 2 - 2 - elapsed)
-									? css.filledIn
-									: null
-							]}
-						></div>
-					);
-				})}
+			{showTime ? (
+				<div key="seconds" classes={css.seconds}>
+					{`${seconds}`}
+				</div>
+			) : (
+				Array(length * 2 - 1)
+					.fill(0)
+					.map((_, i) => {
+						const elapsed = length - seconds - 1;
+						return (
+							<div
+								key={`tick-${i}`}
+								classes={[
+									css.tick,
+									(i < length && elapsed < i) ||
+									(i >= length && i < length * 2 - 2 - elapsed)
+										? css.filledIn
+										: null
+								]}
+							></div>
+						);
+					})
+			)}
 		</div>
 	);
 });

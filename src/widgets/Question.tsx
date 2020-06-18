@@ -50,7 +50,7 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 						Show Answer
 					</div>
 					<div classes={css.timer}>
-						<Timer soundEffects />
+						<Timer showTime={final} length={final ? 30 : 10} />
 					</div>
 				</virtual>
 			)}

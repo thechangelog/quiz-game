@@ -13,3 +13,8 @@
 .filledIn {
 	background-color: red;
 }
+
+.seconds {
+	color: white;
+	font-size: 3em;
+}

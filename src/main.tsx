@@ -25,11 +25,11 @@ const getNextRound = (round: 1 | -1) => {
 
 global.document.onkeyup = (event: KeyboardEvent) => {
 	const { path, apply, get } = store;
-	stopAudio();
 	switch (event.key) {
 		case 'Escape':
 		case 'q':
 		case 'Q':
+			stopAudio();
 			apply([replace(path('view'), 'game')]);
 			break;
 		case 'c':
@@ -55,10 +55,10 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 		case 'B':
 			playAudio('timesUp');
 			break;
-		case 'y':
+		case 'Y':
 			playAudio('correctAnswer');
 			break;
-		case 'Y':
+		case 'y':
 			playAudio('correctSteal');
 			break;
 		case 'n':
@@ -77,10 +77,10 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 	store.invalidate();
 };
 
-global.window.onbeforeunload = (e: Event) => {
-	e.preventDefault();
-	e.returnValue = true;
-};
+// global.window.onbeforeunload = (e: Event) => {
+// 	e.preventDefault();
+// 	e.returnValue = true;
+// };
 
 const r = renderer(() => <App />);
 r.mount({ registry });
