@@ -16,6 +16,7 @@
 	border: 3px solid transparent;
 	border-radius: 50%;
 	height: 100px;
+	min-width: 100px;
 	width: auto;
 	object-fit: cover;
 	margin-right: 24px;

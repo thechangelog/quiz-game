@@ -14,7 +14,7 @@ const factory = create({ store }).properties<ContestantProperties>();
 export const Contestant = factory(function Contestant({ properties, middleware: { store } }) {
 	const {
 		large,
-		contestant: { name, handle, score }
+		contestant: { name, handle, score, avatar }
 	} = properties();
 	const currentQuestion = store.get(store.path('currentQuestion'));
 
@@ -50,7 +50,10 @@ export const Contestant = factory(function Contestant({ properties, middleware: 
 					-
 				</button>
 			</div>
-			<img classes={css.avatar} src={`http://localhost:8888/?handle=${handle}`} />
+			<img
+				classes={css.avatar}
+				src={avatar ? avatar : `http://localhost:8888/?handle=${handle}`}
+			/>
 			<div classes={css.info}>
 				<div classes={css.name}>{name}</div>
 				<div classes={[css.score, score >= 0 ? css.positive : css.negative]}>

@@ -1,6 +1,7 @@
 export interface Contestant {
 	name: string;
 	handle: string;
+	avatar?: string;
 	score: number;
 }
 
