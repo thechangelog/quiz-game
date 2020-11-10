@@ -13,15 +13,15 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	padding: 5vw;
+	padding: 2vw 5vw;
 	position: relative;
 }
 
 .root:before {
-	background: url(/assets/jsparty-abstract-art.svg) no-repeat;
+	background: url(/assets/gotime-abstract-art.svg) no-repeat;
 	content: ""; width: 80vw;
 	height: 80vw;
-	opacity: 0.4;
+	opacity: 0.2;
 	position: fixed;
 	right: -40vw;
 	top: -40vw;
@@ -42,11 +42,11 @@
 }
 
 .title {
-	background: url('/assets/logo_3x.png') center no-repeat;
+	background: url('/assets/gopanic-logo_2x.png') center no-repeat;
 	background-size: 100%;
 	flex: 0 0 526px;
 	width: 526px;
-	height: 100px;
+	height: 130px;
 	margin: 0 20px 0 0;
 	text-indent: -9999px;
 }

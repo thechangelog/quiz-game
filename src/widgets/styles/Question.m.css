@@ -58,18 +58,19 @@
 .answer {
 	flex-grow: 0;
 	font-family: 'jsdanger', serif;
-	font-size: calc(0.75em + 1vw);
-	padding-top: 1em;
+	font-size: calc(0.75em + 2vw);
 	text-align: center;
 	text-shadow: 0 0 10px black;
 }
 
 .showAnswer {
 	text-decoration: underline;
+	padding-top: 1em;
 }
 
 .answer {
 	color: var(--yellow);
+	font-size: calc(1.75em + 3vw);
 }
 
 .timer {

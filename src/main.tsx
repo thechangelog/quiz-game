@@ -74,7 +74,7 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 			playAudio('jsDangerStressTheme');
 			break;
 		case 'w':
-			playAudio('jsDangerWinner');
+			playAudio('goPanicWinner');
 			break;
 	}
 	store.invalidate();

@@ -1,0 +1,303 @@
+{
+  "game": {
+    "name": "Go Panic: GopherCon Edition",
+    "contestants": [
+      {
+        "name": "Kat Zien",
+        "handle": "kasiazien",
+        "avatar": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1582647873/uubplybuapk9ole90gmw.jpg",
+        "score": 0
+      },
+      {
+        "name": "Ellen Körbes",
+        "handle": "ellenkorbes",
+        "avatar": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1601322676/tlzrrz4h9eisybi3cy3b.png",
+        "score": 0
+      },
+      {
+        "name": "Mark Bates",
+        "handle": "markbates",
+        "avatar": "https://res.cloudinary.com/bizzaboprod/image/upload/v1547853679/hyxynb16cjsc8oxu8i14.jpg",
+        "score": 0
+      }
+    ],
+    "rounds": [
+      {
+        "name": "Just Panic",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "It's a no-Go",
+            "hint": "Answers in this category are all features that Go doesn’t have",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "This form of polymorphism common in many languages is likely coming to Go soon",
+                "answer": "generics"
+              },
+              {
+                "value": 200,
+                "clue": "Recursive Go functions might benefit from this compiler optimization",
+                "answer": "tail-call optimization"
+              },
+              {
+                "value": 300,
+                "clue": "Go has explicit error handling, so you won't find these keywords common to other languages",
+                "answer": "try, throw, and/or catch"
+              },
+              {
+                "value": 400,
+                "clue": "The garbage collector is good. But that hasn't stopped some people from implementing this feature themselves.",
+                "answer": "manual memory management"
+              },
+              {
+                "value": 500,
+                "clue": "",
+                "answer": ""
+              }
+            ]
+          },
+          {
+            "name": "Funcy Movies",
+            "hint": "We’ve replaced Go keywords in popular movie titles with ‘func’",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "The Curious Func of Benjamin Button",
+                "answer": "case"
+              },
+              {
+                "value": 200,
+                "clue": "Catch Me Func You Can",
+                "answer": "if"
+              },
+              {
+                "value": 300,
+                "clue": "Point Func",
+                "answer": "break"
+              },
+              {
+                "value": 400,
+                "clue": "Batman Funcs",
+                "answer": "begin"
+              },
+              {
+                "value": 500,
+                "clue": "The Funcstant Gardener",
+                "answer": "const"
+              }
+            ]
+          },
+          {
+            "name": "Groups who Go",
+            "hint": "Gophers don't usually congregate, but when they do... it's because of Go.",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "This group builds bridges to educate underrepresented communities and to foster diversity in Go.",
+                "answer": "GoBridge"
+              },
+              {
+                "value": 200,
+                "clue": "Start a local chapter to help build a more diverse and inclusive Go community",
+                "answer": "Women who Go"
+              },
+              {
+                "value": 300,
+                "clue": "These 7 gophers host weekly conversations from around the Go community",
+                "answer": "Go Time panelists"
+              },
+              {
+                "value": 400,
+                "clue": "2,442 devoloper names and emails are listed in this group on golang.org",
+                "answer": "Go contributors"
+              },
+              {
+                "value": 500,
+                "clue": "Kenneth Shaw organizes this group of 8,573 Gophers in Indonesia",
+                "answer": "GoJakarta"
+              }
+            ]
+          },
+          {
+            "name": "Pike's Proverbs",
+            "hint": "Simple, Poetic, Pithy",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Don't communicate by sharing memory, share memory by _____",
+                "answer": "communicating"
+              },
+              {
+                "value": 200,
+                "clue": "Cgo is not _____",
+                "answer": "Go"
+              },
+              {
+                "value": 300,
+                "clue": "Clear is better than _____",
+                "answer": "clever"
+              },
+              {
+                "value": 400,
+                "clue": "Make the _____ value useful.",
+                "answer": "zero"
+              },
+              {
+                "value": 500,
+                "clue": "A little copying is better than a little _____.",
+                "answer": "dependency"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Double Panic",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "Standard Librarians",
+            "hint": "Answers in this category are all standard library packages",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Implements a doubly linked list",
+                "answer": "list"
+              },
+              {
+                "value": 400,
+                "clue": "Implements formatted I/O with functions analogous to C's printf and scanf",
+                "answer": "fmt"
+              },
+              {
+                "value": 600,
+                "clue": "Contains operations that step around the type safety of Go programs",
+                "answer": "unsafe"
+              },
+              {
+                "value": 800,
+                "clue": "Wraps an io.Reader or io.Writer object, creating another object that provides buffering and some help for textual I/O",
+                "answer": "bufio"
+              },
+              {
+                "value": 1000,
+                "clue": "Implements utility functions to help with black box testing",
+                "answer": "quick"
+              }
+            ]
+          },
+          {
+            "name": "GitHub Stars",
+            "hint": "The top starred repos on GitHub that use Go",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "The world’s fastest framework for building websites",
+                "answer": "gohugio / hugo"
+              },
+              {
+                "value": 400,
+                "clue": "A curated list of awesome Go frameworks, libraries and software",
+                "answer": "avelino / awesome-go"
+              },
+              {
+                "value": 600,
+                "clue": "The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More",
+                "answer": "grafana / grafana"
+              },
+              {
+                "value": 800,
+                "clue": "An HTTP web framework written in Go that features a Martini-like API with much better performance",
+                "answer": "gin-gonic / gin"
+              },
+              {
+                "value": 1000,
+                "clue": "A collaborative project for the container ecosystem to assemble container-based systems",
+                "answer": "moby / moby"
+              }
+            ]
+          },
+          {
+            "name": "Gopherpedia",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Much like mice and rats, gophers are mammals of this order",
+                "answer": "rodents (Rodentia)"
+              },
+              {
+                "value": 400,
+                "clue": "Gophers are known to create a network of these for protection and a means of collecting food",
+                "answer": "tunnels"
+              },
+              {
+                "value": 600,
+                "clue": "\"Pocket\" gophers get their name from this, their most characteristic feature",
+                "answer": "large cheek pouches"
+              },
+              {
+                "value": 800,
+                "clue": "Bull Murray plays a mentally unstable groundskeeper who hunts a pesky gopher in this 1980 golf comedy",
+                "answer": "Caddy Shack"
+              },
+              {
+                "value": 1000,
+                "clue": "Goldy Gopher cheers alongside students at this American university",
+                "answer": "Minnesota"
+              }
+            ]
+          },
+          {
+            "name": "Go != Golang",
+            "hint": "Things that use \"Go\" in their name, but are not Golang",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "a type of small four-wheeled vehicle, motorized or not",
+                "answer": "go-kart"
+              },
+              {
+                "value": 400,
+                "clue": "Dancers who are employed to entertain crowds at nightclubs or other venues where music is played",
+                "answer": "go-go dancers"
+              },
+              {
+                "value": 600,
+                "clue": "This 2016 augmented reality game for iOS and Android was more than 500 million times that year",
+                "answer": "Pokémon Go"
+              },
+              {
+                "value": 800,
+                "clue": "English duo Wham! had a #1 hit with this 1980 single. Jitterbug...",
+                "answer": "Wake Me Up Before You Go-Go"
+              },
+              {
+                "value": 1000,
+                "clue": "A line of transforming robot toys produced by Tonka from 1983 to 1987",
+                "answer": "GoBots"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Final Panic",
+        "format": "final",
+        "categories": [
+          {
+            "name": "Localhost",
+            "hint": "",
+            "questions": [
+              {
+                "clue": "Selling literally dozens of copies, this 2015 book was written by none other than your Go Panic host, Mat Ryer",
+                "answer": "Go Programming Blueprints"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
