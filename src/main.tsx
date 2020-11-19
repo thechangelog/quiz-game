@@ -55,10 +55,10 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 		case 'B':
 			playAudio('timesUp');
 			break;
-		case 'Y':
+		case 'y':
 			playAudio('correctAnswer');
 			break;
-		case 'y':
+		case 'Y':
 			playAudio('correctSteal');
 			break;
 		case 'n':
@@ -68,7 +68,7 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 			playAudio('wrongSteal');
 			break;
 		case 't':
-			playAudio('jsDangerTheme');
+			playAudio('goPanicTheme');
 			break;
 		case 'T':
 			playAudio('jsDangerStressTheme');

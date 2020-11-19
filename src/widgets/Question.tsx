@@ -2,7 +2,6 @@ import { create, tsx } from '@dojo/framework/core/vdom';
 import icache from '@dojo/framework/core/middleware/icache';
 import * as css from './styles/Question.m.css';
 import { Question as QuestionData } from '../interfaces';
-import Timer from './Timer';
 
 export interface QuestionProperties {
 	question: QuestionData;
@@ -48,9 +47,6 @@ export const Question = factory(function Question({ middleware: { icache }, prop
 						classes={css.showAnswer}
 					>
 						Show Answer
-					</div>
-					<div classes={css.timer}>
-						<Timer showTime={final} length={final ? 30 : 10} />
 					</div>
 				</virtual>
 			)}

@@ -37,8 +37,8 @@
               },
               {
                 "value": 200,
-                "clue": "Recursive Go functions might benefit from this compiler optimization",
-                "answer": "tail-call optimization"
+                "clue": "You won't find the class keyword in Go, that's because the language isn't this.",
+                "answer": "object-oriented"
               },
               {
                 "value": 300,
@@ -47,13 +47,13 @@
               },
               {
                 "value": 400,
-                "clue": "The garbage collector is good. But that hasn't stopped some people from implementing this feature themselves.",
+                "clue": "The garbage collector is good. But that hasn't stopped some people from using this technique themselves.",
                 "answer": "manual memory management"
               },
               {
                 "value": 500,
-                "clue": "",
-                "answer": ""
+                "clue": "Recursive Go functions might benefit from this compiler optimization",
+                "answer": "tail-call optimization"
               }
             ]
           },
@@ -68,8 +68,8 @@
               },
               {
                 "value": 200,
-                "clue": "Catch Me Func You Can",
-                "answer": "if"
+                "clue": "The funcportance of being Earnest",
+                "answer": "import"
               },
               {
                 "value": 300,
@@ -79,7 +79,7 @@
               {
                 "value": 400,
                 "clue": "Batman Funcs",
-                "answer": "begin"
+                "answer": "return"
               },
               {
                 "value": 500,
@@ -99,13 +99,13 @@
               },
               {
                 "value": 200,
-                "clue": "Start a local chapter to help build a more diverse and inclusive Go community",
+                "clue": "She runs a local chapter to help build a more diverse and inclusive Go community",
                 "answer": "Women who Go"
               },
               {
                 "value": 300,
                 "clue": "These 7 gophers host weekly conversations from around the Go community",
-                "answer": "Go Time panelists"
+                "answer": "Go Time"
               },
               {
                 "value": 400,
@@ -114,7 +114,7 @@
               },
               {
                 "value": 500,
-                "clue": "Kenneth Shaw organizes this group of 8,573 Gophers in Indonesia",
+                "clue": "Kenneth Shaw organizes this group of 8,573 Gophers in Indonesia, Meetup.com's largest",
                 "answer": "GoJakarta"
               }
             ]
@@ -163,7 +163,7 @@
               {
                 "value": 200,
                 "clue": "Implements a doubly linked list",
-                "answer": "list"
+                "answer": "container/list"
               },
               {
                 "value": 400,
@@ -193,12 +193,12 @@
             "questions": [
               {
                 "value": 200,
-                "clue": "The world’s fastest framework for building websites",
+                "clue": "The world’s fastest framework for building static websites",
                 "answer": "gohugio / hugo"
               },
               {
                 "value": 400,
-                "clue": "A curated list of awesome Go frameworks, libraries and software",
+                "clue": "A curated list of awe-inspiring Go frameworks, libraries and software",
                 "answer": "avelino / awesome-go"
               },
               {
@@ -255,17 +255,17 @@
             "questions": [
               {
                 "value": 200,
-                "clue": "a type of small four-wheeled vehicle, motorized or not",
+                "clue": "a type of small four-wheeled vehicle, motorized or not (often used by kids)",
                 "answer": "go-kart"
               },
               {
                 "value": 400,
-                "clue": "Dancers who are employed to entertain crowds at nightclubs or other venues where music is played",
-                "answer": "go-go dancers"
+                "clue": "This computer program acquired by Google plays the board game Go",
+                "answer": "AlphaGo"
               },
               {
                 "value": 600,
-                "clue": "This 2016 augmented reality game for iOS and Android was more than 500 million times that year",
+                "clue": "This 2016 augmented reality game for iOS and Android was downloaded more than 500 million times that year",
                 "answer": "Pokémon Go"
               },
               {
