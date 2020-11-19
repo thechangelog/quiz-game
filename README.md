@@ -25,3 +25,5 @@ To create an in memory development build and start a development server with hot
 Code is released under the [MIT license](/LICENSE).
 
 Images and sounds are released under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+This project is in no way affiliated with nor endorsed by [America's Favorite Quiz Show](https://www.jeopardy.com).
