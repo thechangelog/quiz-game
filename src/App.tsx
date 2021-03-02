@@ -20,6 +20,7 @@ export default factory(function App({ middleware: { store } }) {
 		return <div key="loading">Loading</div>;
 	}
 
+	const gameStyle = get(path('style'));
 	const rounds = get(path('rounds'));
 	const numRounds = rounds.length;
 	const currentRound = get(path('currentRound'));
@@ -30,9 +31,9 @@ export default factory(function App({ middleware: { store } }) {
 	const winner = get(path('winner'));
 
 	return (
-		<div classes={[css.root]}>
+		<div classes={[css.root, css[gameStyle as keyof typeof css]]}>
 			<div classes={css.header}>
-				<h1 classes={css.title}>{gameName}</h1>
+				<h1 classes={[css.title, css[gameStyle as keyof typeof css]]}>{gameName}</h1>
 				{!winner && (
 					<button
 						classes={css.round}

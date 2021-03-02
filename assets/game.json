@@ -1,5 +1,6 @@
 {
 	"game": {
+		"style": "jsDanger",
 		"name": "JS Danger!",
 		"contestants": [
 			{

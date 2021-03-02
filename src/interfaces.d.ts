@@ -28,12 +28,14 @@ export interface Round {
 
 export interface Game {
 	name: string;
+	style: string;
 	contestants: Contestant[];
 	rounds: Round[];
 }
 
 export interface State {
 	name: string;
+	style: string;
 	currentRound: number;
 	contestants: Contestant[];
 	pointsAtStake: number;

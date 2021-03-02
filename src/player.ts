@@ -20,8 +20,8 @@ export function stopAudio() {
 	});
 }
 
-export function playAudio(sound: keyof typeof sounds) {
-	const path = `assets/${sounds[sound]}`;
+export function playAudio(sound: string) {
+	const path = `assets/${sounds[sound as keyof typeof sounds]}`;
 	if (!players.has(path)) {
 		players.set(path, new Audio(path));
 	}

@@ -25,6 +25,9 @@ const getNextRound = (round: 1 | -1) => {
 
 global.document.onkeyup = (event: KeyboardEvent) => {
 	const { path, apply, get } = store;
+	const contestants = get(path('contestants'));
+	const style = get(path('style'));
+
 	switch (event.key) {
 		case 'Escape':
 		case 'q':
@@ -45,7 +48,6 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 		case '1':
 		case '2':
 		case '3':
-			const contestants = get(path('contestants'));
 			apply([replace(path('winner'), contestants[+event.key - 1])]);
 			break;
 		case '0':
@@ -68,13 +70,13 @@ global.document.onkeyup = (event: KeyboardEvent) => {
 			playAudio('wrongSteal');
 			break;
 		case 't':
-			playAudio('goPanicTheme');
+			playAudio(`${style}Theme`);
 			break;
 		case 'T':
 			playAudio('jsDangerStressTheme');
 			break;
 		case 'w':
-			playAudio('goPanicWinner');
+			playAudio(`${style}Winner`);
 			break;
 	}
 	store.invalidate();

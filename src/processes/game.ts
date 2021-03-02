@@ -11,14 +11,15 @@ const loadGameData = createCommand<{ url: string }>(async ({ path, payload: { ur
 	if (response.status !== 200) {
 		throw new Error(`Failed to fetch game data. url: "${url}"`);
 	}
-	const { contestants, rounds, name } = (await response.json()).game as Game;
+	const { contestants, rounds, name, style } = (await response.json()).game as Game;
 
 	return [
 		add(path('contestants'), contestants),
 		add(path('rounds'), rounds),
 		add(path('name'), name),
 		add(path('currentRound'), 0),
-		add(path('pointsAtStake'), defaultValue)
+		add(path('pointsAtStake'), defaultValue),
+		add(path('style'), style)
 	];
 });
 

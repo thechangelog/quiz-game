@@ -1,4 +1,6 @@
 export const root: string;
+export const jsDanger: string;
+export const goPanic: string;
 export const header: string;
 export const roundNumber: string;
 export const title: string;

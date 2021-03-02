@@ -1,5 +1,6 @@
 {
   "game": {
+    "style": "goPanic",
     "name": "Go Panic: GopherCon Edition",
     "contestants": [
       {
