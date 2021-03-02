@@ -20,6 +20,19 @@ To change the port of the development server use the `--port` option on the `doj
 
 To create an in memory development build and start a development server with hot reload, switch the `--watch` option to `memory`.
 
+## Operating the game
+
+- `esc` or `q` returns to main view, stopping audio
+- `c` shows contestants view (use between rounds)
+- `▶️` moves to next round
+- `◀️` moves to previous round
+- `b` plays "times up" sound
+- `y` plays "correct answer" sound
+- `n` plays "incorrect answer" sound
+- `t` plays "theme song" sound
+- `T` plays "stressed out theme song" sound
+- `w` plays "winner" song
+
 ## Legal
 
 Code is released under the [MIT license](/LICENSE).
