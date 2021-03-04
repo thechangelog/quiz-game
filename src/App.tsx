@@ -16,7 +16,7 @@ export default factory(function App({ middleware: { store } }) {
 
 	const gameName = get(path('name'));
 	if (!gameName) {
-		executor(loadGame)({ url: './assets/gopanic.json' });
+		executor(loadGame)({ url: './assets/tricks.json' });
 		return <div key="loading">Loading</div>;
 	}
 
