@@ -1,0 +1,308 @@
+{
+  "game": {
+    "style": "jsDanger",
+    "name": "JS Danger: OpenJS World Edition",
+    "contestants": [
+      {
+        "name": "Cassidy",
+        "handle": "cassidoo",
+        "score": 0
+      },
+      {
+        "name": "Prosper",
+        "handle": "unicodeveloper",
+        "avatar": "https://avatars.sched.co/c/ab/11089105/avatar.jpg",
+        "score": 0
+      },
+      {
+        "name": "Tiffany",
+        "handle": "sirmerr",
+        "score": 0
+      }
+    ],
+    "rounds": [
+      {
+        "name": "Trouble",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "JS Globals",
+            "hint": "values, functions, and objects that live in JavaScript's global scope",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "The browser's global object",
+                "answer": "window"
+              },
+              {
+                "value": 200,
+                "clue": "This function determines if the given value is Not a Number",
+                "answer": "isNaN()"
+              },
+              {
+                "value": 300,
+                "clue": "Nearly all objects in JavaScript are instances of this object",
+                "answer": "Object"
+              },
+              {
+                "value": 400,
+                "clue": "This function takes a string and pretends it's JavaScript. YOLO?",
+                "answer": "eval()"
+              },
+              {
+                "value": 500,
+                "clue": "It's not a reserved word, it's not configurable, and it's not writable",
+                "answer": "undefined"
+              }
+            ]
+          },
+          {
+            "name": "Describe an Emoj",
+            "hint": "Answers start with the letter T",
+            "questions": [
+              {
+                "value": 100,
+                "image": "assets/ojsw/emoji-nail-polish.png",
+                "answer": "Nail Polish"
+              },
+              {
+                "value": 200,
+                "image": "assets/ojsw/emoji-exploding-head.png",
+                "answer": "Exploding Head"
+              },
+              {
+                "value": 300,
+                "image": "assets/ojsw/emoji-performing-arts.png",
+                "answer": "Performing Arts"
+              },
+              {
+                "value": 400,
+                "image": "assets/ojsw/emoji-cat-face-screaming-in-fear.png",
+                "answer": "Cat Face Screaming in Fear"
+              },
+              {
+                "value": 500,
+                "image": "assets/ojsw/emoji-globe-with-meridians.png",
+                "answer": "Globe with Meridians"
+              }
+            ]
+          },
+          {
+            "name": "Let's Get CSSpecific",
+            "hint": "CSS Specificity related questions",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "This selects everything in the 'verse",
+                "answer": "Universal Selector (*)"
+              },
+              {
+                "value": 200,
+                "clue": "It overrides all other declarations, but that doesn't mean you should use it",
+                "answer": "!important"
+              },
+              {
+                "value": 300,
+                "clue": "Use this to describe an element that is nested inside another element in the document",
+                "answer": "Descendant Combinator"
+              },
+              {
+                "value": 400,
+                "clue": "Shoot! You used the same rule twice. This one wins",
+                "answer": "The Latter Rule"
+              },
+              {
+                "value": 500,
+                "clue": "The specificity score of `li.red.level`",
+                "answer": "21",
+                "extra": "0 ids, 2 classes, 1 element = 21"
+              }
+            ]
+          },
+          {
+            "name": "HTML's Legacy",
+            "hint": "These are all deprecated or obsolete html entities",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "A non-standard element which causes the enclosed text to flash slowly",
+                "answer": "<blink>"
+              },
+              {
+                "value": 200,
+                "clue": "Used to insert a scrolling area of text and control what happens when the text reaches the edges",
+                "answer": "<marquee>"
+              },
+              {
+                "value": 300,
+                "clue": "Sets up a sound file to play in the background while the page is used (IE only)",
+                "answer": "<bgsound>"
+              },
+              {
+                "value": 400,
+                "clue": "Sets a default font face, size, and color for the other elements which are descended from its parent",
+                "answer": "<basefont>"
+              },
+              {
+                "value": 500,
+                "clue": "Prevents the text it contains from automatically wrapping across multiple lines, which could force the user to scroll horizontally to see the entire width of the text",
+                "answer": "<nobr>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Double Trouble",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "WAT",
+            "hint": "Provide the nonsensical return value of these JavaScript expressions",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "1 + \"2\"",
+                "answer": "\"12\""
+              },
+              {
+                "value": 400,
+                "clue": "[] + []",
+                "answer": "Empty String (\"\")"
+              },
+              {
+                "value": 600,
+                "clue": "{} + []",
+                "answer": "0"
+              },
+              {
+                "value": 800,
+                "clue": "[] + {}",
+                "answer": "\"[object Object]\""
+              },
+              {
+                "value": 1000,
+                "clue": "Array(16).join(\"wat\" - 1) + \" Batman!\"",
+                "answer": "\"NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!\""
+              }
+            ]
+          },
+          {
+            "name": "Faces of OpenJS World",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "image": "assets/ojsw/dash.jpg",
+                "clue": "He is Glitch's CEO",
+                "answer": "Anil Dash"
+              },
+              {
+                "value": 400,
+                "image": "assets/ojsw/ubl.jpg",
+                "clue": "He created AMP and works at Google",
+                "answer": "Malte Ubl"
+              },
+              {
+                "value": 600,
+                "image": "assets/ojsw/koch.jpg",
+                "clue": "She set a record for the longest single spaceflight by a woman with a total of 328 days in space",
+                "answer": "Christina Hammock Koch"
+              },
+              {
+                "value": 800,
+                "image": "assets/ojsw/hiller.jpg",
+                "clue": "He is a JS Party panelist and goes by \"boneskull\"",
+                "answer": "Christopher Hiller"
+              },
+              {
+                "value": 1000,
+                "image": "assets/ojsw/ginn.jpg",
+                "clue": "She's the Executive Director for the OpenJS Foundation",
+                "answer": "Robin Bender Ginn"
+              }
+            ]
+          },
+          {
+            "name": "Web Service Taglines",
+            "hint": "We give you the tagline. You give us the web service",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "The new standard in online payments",
+                "answer": "Stripe"
+              },
+              {
+                "value": 400,
+                "clue": "An object storage service that offers industry-leading scalability, data availability, security, and performance",
+                "answer": "Amazon S3"
+              },
+              {
+                "value": 600,
+                "clue": "Get a deeper understanding of your customers. This gives you the free tools you need to analyze data for your business in one place",
+                "answer": "Google Analytics"
+              },
+              {
+                "value": 800,
+                "clue": "Develop tailored, fast Search and Discovery experiences that delight and convert",
+                "answer": "Algolia"
+              },
+              {
+                "value": 1000,
+                "clue": "The easy way to integrate top‑of‑the‑line computational knowledge into your applications",
+                "answer": "Wolfram|Alpha"
+              }
+            ]
+          },
+          {
+            "name": "JS Jargon Jockey",
+            "hint": "",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "This determines the visibility of variables and other resources in areas of your code",
+                "answer": "Scope"
+              },
+              {
+                "value": 400,
+                "clue": "A feature where an inner function has access to the outer (enclosing) function's variables",
+                "answer": "Closure"
+              },
+              {
+                "value": 600,
+                "clue": "A mechanism where variables and function declarations are moved to the top of their scope before code execution",
+                "answer": "Hoisting"
+              },
+              {
+                "value": 800,
+                "clue": "The mechanism by which objects inherit features from one another",
+                "answer": "Prototype"
+              },
+              {
+                "value": 1000,
+                "clue": "A function that runs as soon as it is defined",
+                "answer": "Immediately Invoked Function Expression (IIFE)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Final Trouble",
+        "format": "final",
+        "categories": [
+          {
+            "name": "JavaScript History",
+            "hint": "",
+            "questions": [
+              {
+                "clue": "After abandoning the 4th edition, the 5th edition of the ECMAScript specification was published in this year",
+                "answer": "2009"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
