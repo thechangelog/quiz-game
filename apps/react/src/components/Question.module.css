@@ -1,0 +1,83 @@
+@import '../variables.css';
+
+.root {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--blue);
+    color: var(--white);
+    align-self: stretch;
+    text-align: center;
+    flex-grow: 2;
+    flex-basis: 600px;
+    padding: 2.5vw;
+    text-shadow: 0 0 10px black;
+}
+
+.finalQuestion {
+    position: unset;
+}
+
+.questionInfo {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-between;
+}
+
+.category {
+    font-family: 'jsdanger', serif;
+    font-size: 1.5em;
+}
+
+.value {
+    font-family: 'jsdanger', serif;
+    font-size: 1.5em;
+}
+
+.imageWrapper {
+    flex-grow: 2;
+}
+
+.image {
+    height: auto;
+    max-width: 75%;
+}
+
+.clue {
+    cursor: pointer;
+    font-family: 'jsdanger', serif;
+    font-size: 3em;
+    padding: 1vw;
+    flex-grow: 2;
+}
+
+.showAnswer,
+.answer {
+    flex-grow: 0;
+    font-family: 'jsdanger', serif;
+    font-size: calc(0.75em + 2vw);
+    text-align: center;
+    text-shadow: 0 0 10px black;
+}
+
+.showAnswer {
+    text-decoration: underline;
+    padding-top: 1em;
+}
+
+.answer {
+    color: var(--yellow);
+    font-size: calc(1.75em + 3vw);
+}
+
+.timer {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

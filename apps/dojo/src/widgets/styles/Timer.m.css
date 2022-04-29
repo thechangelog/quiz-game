@@ -1,0 +1,20 @@
+.root {
+	color: white;
+	display: flex;
+}
+
+.tick {
+	width: 30px;
+	height: 15px;
+	content: " ";
+	border: 1px solid #fff;
+}
+
+.filledIn {
+	background-color: red;
+}
+
+.seconds {
+	color: white;
+	font-size: 3em;
+}

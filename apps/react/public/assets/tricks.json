@@ -1,0 +1,310 @@
+{
+  "game": {
+    "style": "jsDanger",
+    "name": "JS Danger: CSS-Tricks Edition",
+    "contestants": [
+      {
+        "name": "Chris Coyier",
+        "handle": "chriscoyier",
+        "avatar": "https://pbs.twimg.com/profile_images/883049860332609537/IsUISvAq_400x400.jpg",
+        "score": 0
+      },
+      {
+        "name": "Sarah Drasner",
+        "handle": "sarah_edo",
+        "avatar": "https://pbs.twimg.com/profile_images/1281071936605323266/wc1KRZLK_400x400.jpg",
+        "score": 0
+      },
+      {
+        "name": "Geoff Graham",
+        "handle": "geoffreygraham",
+        "avatar": "https://pbs.twimg.com/profile_images/1280616200423174144/S6g8rNmQ_400x400.jpg",
+        "score": 0
+      },
+      {
+        "name": "Miriam Suzanne",
+        "handle": "TerribleMia",
+        "avatar": "https://pbs.twimg.com/profile_images/1433687120204337152/w4S8YTx__400x400.jpg",
+        "score": 0
+      }
+    ],
+    "rounds": [
+      {
+        "name": "Trouble",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "Project People",
+            "hint": "Match coders with the projects they started",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Matt Mullenweg",
+                "answer": "WordPress"
+              },
+              {
+                "value": 200,
+                "clue": "John Resig",
+                "answer": "jQuery"
+              },
+              {
+                "value": 300,
+                "clue": "David Heinemeier Hansson",
+                "answer": "Ruby on Rails"
+              },
+              {
+                "value": 400,
+                "clue": "Dries Buytaert",
+                "answer": "Drupal"
+              },
+              {
+                "value": 500,
+                "clue": "Mr.doob",
+                "answer": "Three.js"
+              }
+            ]
+          },
+          {
+            "name": "Movies worth CSSing",
+            "hint": "Movies with CSS-related things in their titles",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Keanu Reeves infiltrates a gang of bank robbing surfers in this 1991 cult classic",
+                "answer": "Point Break"
+              },
+              {
+                "value": 300,
+                "clue": "In the colorful future, a cab driver (Bruce Willis) unwittingly becomes the central figure in the search for a legendary cosmic weapon to keep Evil and Mr. Zorg (Gary Oldman) at bay.",
+                "answer": "The Fifth Element"
+              },
+              {
+                "value": 200,
+                "clue": "A young Peruvian bear travels to London in search of a home in this 2015 animated comedy",
+                "answer": "Paddington"
+              },
+              {
+                "value": 400,
+                "clue": "Two powerful mutants (Charles Xavier and Eric Lensherr) join together to stop a ruthless dictator from thrusting Russia and the U.S. into nuclear war.",
+                "answer": "X-Men: First Class"
+              },
+              {
+                "value": 500,
+                "clue": "Steven Spielberg directs Whoopi Goldberg, a black Southern woman struggling to find her identity after suffering abuse from her father and others.",
+                "answer": "The Color Purple"
+              }
+            ]
+          },
+          {
+            "name": "Tricky CSS Sites",
+            "hint": "Websites (that aren't CSS-Tricks) where people learn CSS",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Often atop CSS-related search resutls, but that doesn't mean devs love it",
+                "answer": "w3schools.com"
+              },
+              {
+                "value": 200,
+                "clue": "Browser support tables for modern web technologies (including CSS)",
+                "answer": "caniuse.com"
+              },
+              {
+                "value": 300,
+                "clue": "This site demonstrates what can be accomplished by only changing the CSS",
+                "answer": "csszengarden.com"
+              },
+              {
+                "value": 400,
+                "clue": "Launched in 2005 when a small team of idealists set out to create a new, free, community-built online resource for all Web developers",
+                "answer": "developer.mozilla.org"
+              },
+              {
+                "value": 500,
+                "clue": "This site shows you CSS alternatives for common JS UI components.",
+                "answer": "youmightnotneedjs.com"
+              }
+            ]
+          },
+          {
+            "name": "Bleeding Edge",
+            "hint": "New(ish) browser features",
+            "questions": [
+              {
+                "value": 100,
+                "clue": "Some animations can cause dizziness and nausea in people with vestibular disorders. Media queries to the rescue!",
+                "answer": "prefers-reduced-motion"
+              },
+              {
+                "value": 200,
+                "clue": "This experimental CSS property allows animations to be driven by a container's scroll position",
+                "answer": "@scroll-timeline"
+              },
+              {
+                "value": 300,
+                "clue": "This modern image format is optimized for web environments. It boasts better image compression than WebP, JPEG, PNG and GIF",
+                "answer": "JPEG XL"
+              },
+              {
+                "value": 400,
+                "clue": "The new Cookie Store API has a more modern interface than `document.cookie` and can also be used in these.",
+                "answer": "Service Workers"
+              },
+              {
+                "value": 500,
+                "clue": "This CSS property sets whether an element's background extends underneath its border box, padding box, or content box.",
+                "answer": "background-clip"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Double Trouble",
+        "format": "standard",
+        "categories": [
+          {
+            "name": "Oh Node You Didn't!",
+            "hint": "Node-related trivia Qs",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Miss the browser? This function might console you. It works pretty much the same in Node.",
+                "answer": "console.log"
+              },
+              {
+                "value": 400,
+                "clue": "Node.js runs on this JavaScript engine, which is also at the core of Google Chrome",
+                "answer": "V8"
+              },
+              {
+                "value": 600,
+                "clue": "You have to use `require` instead of `import` in Node because it relies on this module system",
+                "answer": "CommonJS"
+              },
+              {
+                "value": 800,
+                "clue": "If you want to read an environment variable or exit from a Node program, you must use this core module",
+                "answer": "process"
+              },
+              {
+                "value": 1000,
+                "clue": "`this` in the browser's global scope refers to `window`, but in Node's it refers to...",
+                "answer": "module.exports"
+              }
+            ]
+          },
+          {
+            "name": "Framewords",
+            "hint": "CSS frameworks in their own words/marketing copy",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. From Twitter",
+                "answer": "Bootstrap"
+              },
+              {
+                "value": 400,
+                "clue": "A utility-first framework to rapidly build modern websites without ever leaving your HTML",
+                "answer": "Tailwind CSS"
+              },
+              {
+                "value": 600,
+                "clue": "A free, open source framework that provides ready-to-use frontend components that you can easily combine to build responsive web interfaces. No CSS knowledge required",
+                "answer": "Bulma"
+              },
+              {
+                "value": 800,
+                "clue": "This 8bit-like CSS Framework is brimming with 80's nostalgia",
+                "answer": "NES.css"
+              },
+              {
+                "value": 1000,
+                "clue": "The less formal CSS framework. Its goal is to be as minimal as possible when adding classes.",
+                "answer": "PaperCSS"
+              }
+            ]
+          },
+          {
+            "name": "Actual CSS Tricks",
+            "hint": "Hacks devs do to get stuff done",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "You can use multiple background images and nested <div>s to achieve the rounding effect possible with this one property",
+                "answer": "border-radius"
+              },
+              {
+                "value": 400,
+                "clue": "Many people aren't clear why this fixes anything, but they reach for it anyways when things don't look right",
+                "answer": "clearfix"
+              },
+              {
+                "value": 600,
+                "clue": "This is the best PLACE for your style rule to ensure it gets applied",
+                "answer": "inline on the style attribute"
+              },
+              {
+                "value": 800,
+                "clue": "It used to be a trickier aspect of CSS, but flexbox and grid have made it trivial to pull off",
+                "answer": "centering things"
+              },
+              {
+                "value": 1000,
+                "clue": "This proprietary Microsoft extension to Internet Explorer provides a mechanism to target each of the versions of IE either specifically, or as a group.",
+                "answer": "Conditional comments"
+              }
+            ]
+          },
+          {
+            "name": "Divitis",
+            "hint": "We've replaced semantic html elements with divs, as you do.",
+            "questions": [
+              {
+                "value": 200,
+                "clue": "<div name='please'>Press me</div>",
+                "answer": "<button>"
+              },
+              {
+                "value": 400,
+                "clue": "<div>This text is important, serious, or urgent</div>",
+                "answer": "<strong>"
+              },
+              {
+                "value": 600,
+                "clue": "<div>JSON</div> stands for JavaScript Object Notation",
+                "answer": "<abbr>"
+              },
+              {
+                "value": 800,
+                "clue": "A common equation in physics is E = MC<div>2</div>",
+                "answer": "<sup>"
+              },
+              {
+                "value": 1000,
+                "clue": "<div value=\"70\" max=\"100\">70 %</div>",
+                "answer": "<progress>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Final Trouble",
+        "format": "final",
+        "categories": [
+          {
+            "name": "CSS 🤝 R&B",
+            "hint": "",
+            "questions": [
+              {
+                "clue": "A year before CSS's debut, this chart-topping trio sang this song...",
+                "answer": "TLC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
